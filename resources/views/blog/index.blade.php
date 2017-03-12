@@ -1,5 +1,5 @@
 
-<!-- Show welcome page -->
+<!-- Home page -->
 
 @extends('main')
 
@@ -20,6 +20,7 @@
                     </a>{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}
                 </h4>
 
+                {{-- Image of each post --}}
                 @if ($post->img_url)
                     <img src="{{ $post->img_url }}" width="150" height="150">
                 @elseif($post->image)

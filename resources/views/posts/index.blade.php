@@ -1,5 +1,5 @@
 
-<!-- Show all the posts -->
+<!-- Show all the posts of each user -->
 
 @extends('main')
 

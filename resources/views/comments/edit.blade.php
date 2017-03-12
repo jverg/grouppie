@@ -1,3 +1,6 @@
+
+{{-- Page to edit a comment --}}
+
 @extends('main')
 
 @section('title', '| Edit Comment')

@@ -1,11 +1,13 @@
 
-<!-- Show a post -->
+<!-- Edit a post -->
 
 @extends('main')
 
 @section('title', '| Edit post')
 
 @section('stylesheets')
+
+    {{-- Editor's script --}}
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 
     <script>

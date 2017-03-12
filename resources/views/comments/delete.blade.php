@@ -1,3 +1,6 @@
+
+{{-- Delete a comment --}}
+
 @extends('main')
 
 @section('title', '| Delete Comment')
@@ -6,6 +9,8 @@
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
+            {{-- Title of the page --}}
             <h1>Delete this comment</h1>
             <p>
                 <strong>Name:</strong>{{ $comment->name }}<br>

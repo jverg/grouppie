@@ -11,8 +11,10 @@ use Session;
 
 class CommentsController extends Controller {
 
+    /**
+     * CommentsController constructor.
+     */
     public function __construct() {
-
         $this->middleware('auth', array('except' => 'store'));
     }
 

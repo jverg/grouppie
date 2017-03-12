@@ -233,8 +233,11 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        // Post's editor.
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        // Post's images
         'Image' => Intervention\Image\Facades\Image::class,
+        // Crawler.
         'Goutte' => Weidner\Goutte\GoutteFacade::class,
     ],
 ];

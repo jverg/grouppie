@@ -1,5 +1,5 @@
 
-<!-- Create post page -->
+<!-- Create post via crawler page -->
 
 @extends('main')
 

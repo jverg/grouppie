@@ -11,8 +11,8 @@ class AddImageColToPosts extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
+        // Create image column in posts table.
         Schema::table('posts', function (Blueprint $table) {
             $table->string('image')->nullable();
         });
@@ -23,8 +23,7 @@ class AddImageColToPosts extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropColumn('image');
         });

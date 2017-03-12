@@ -73,8 +73,7 @@ class PostController extends Controller {
         $post->title = $request->title;
         $post->description = $request->description;
         $post->user_id = Auth::user()->id;
-
-        // Save our image.
+        // Save post's image.
         if($request->hasFile('post_images')) {
             $image = $request->file('post_images');
             $filename = time() . '.' . $image->getClientOriginalExtension();
@@ -83,7 +82,6 @@ class PostController extends Controller {
 
             $post->image = $filename;
         }
-
         $post->save();
 
         // Success message just for one request.
@@ -91,7 +89,6 @@ class PostController extends Controller {
 
         // Redirect to the page of the last created post.
         return redirect()->route('posts.show', $post->id);
-
     }
 
     /**
@@ -144,6 +141,7 @@ class PostController extends Controller {
      */
     public function update(Request $request, $id) {
 
+        //Find the post to update.
         $post = Post::find($id);
         $this->validate($request, array(
             'title' => 'required|max:255',
@@ -175,6 +173,7 @@ class PostController extends Controller {
         $post = Post::find($id);
         $post->delete();
 
+        // Message when deletion took place.
         Session::flash('success', 'The post was successfully deleted!');
         return redirect()->route('posts.index');
     }

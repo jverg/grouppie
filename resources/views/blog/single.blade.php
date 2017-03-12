@@ -1,5 +1,5 @@
 
-<!-- Show a post for all users -->
+<!-- Show single post -->
 
 @extends('main')
 
@@ -11,19 +11,24 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
 
+        {{-- Post's title--}}
         <h1>{{ $post->title }}</h1><br>
+
+        {{-- Button that redirects to author's profile --}}
         <h4><span class="fa fa-user"></span>
         <a href="{{ route('user.show', \App\User::find($post->user_id)->id) }}">
             {{ \App\User::find($post->user_id)->name }}
         </a>{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}
         </h4>
 
+        {{-- Image for each post --}}
         @if ($post->img_url)
             <img src="{{ $post->img_url}}" width="200" height="200">
         @elseif($post->image)
             <img src="{{ asset('post_images/' . $post->image) }}" width="200" height="200">
         @endif
 
+        {{-- Main content of each post--}}
         <p>{!! $post->description !!}</p><br><br>
     </div>
 </div>

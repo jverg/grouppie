@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 class BlogController extends Controller {
 
     /**
-     * Welcome page.
+     * Home page.
      *
      * @return mixed
      */
@@ -26,6 +26,12 @@ class BlogController extends Controller {
         return view('blog.index')->withPosts($posts);
     }
 
+    /**
+     * Show each post.
+     *
+     * @param $id
+     * @return mixed
+     */
     public function getSingle($id) {
 
         // Fetch from DB.
