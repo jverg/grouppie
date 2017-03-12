@@ -44,7 +44,7 @@ class CommentsController extends Controller {
         Session::flash('success', 'Comment was added!');
 
         // Redirect to the post's page.
-        return redirect()->route('blog.single', array($post->slug));
+        return redirect()->route('blog.single', array($post->id));
     }
 
     /**

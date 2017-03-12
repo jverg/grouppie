@@ -17,8 +17,14 @@
             {{ \App\User::find($post->user_id)->name }}
         </a>{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}
         </h4>
-        <img src="{{ asset('post_images/' . $post->image) }}"/>
-        <p>{!! $post->body !!}</p><br><br>
+
+        @if ($post->img_url)
+            <img src="{{ $post->img_url}}" width="200" height="200">
+        @elseif($post->image)
+            <img src="{{ asset('post_images/' . $post->image) }}" width="200" height="200">
+        @endif
+
+        <p>{!! $post->description !!}</p><br><br>
     </div>
 </div>
 

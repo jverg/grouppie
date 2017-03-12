@@ -19,11 +19,25 @@
                         {{ \App\User::find($post->user_id)->name }}
                     </a>{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}
                 </h4>
-                <p>{{ substr(strip_tags($post->body), 0, 250) }}</p><br>
+
+                @if ($post->img_url)
+                    <img src="{{ $post->img_url }}" width="150" height="150">
+                @elseif($post->image)
+                    <img src="{{ asset('post_images/' . $post->image) }}" width="150" height="150">
+                @endif
+
+                <!-- Main content of the post -->
+                <p>{{ strip_tags($post->description) }}</p><br>
+
+                <!-- Comments -->
                 <h5>Comments:<small> {{ $post->comments()->count() }}</small></h5>
 
                 <!-- Read more button -->
-                <a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read more</a>
+                @if($post->url)
+                    <a href="{{ $post->url }}" class="btn btn-primary" target="_blank">Read more</a>
+                @else
+                    <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary">Read more</a>
+                @endif
                 <hr>
             </div>
         </div>

@@ -14,7 +14,7 @@
 Route::group(['middleware' => ['web']], function () {
 
     // Post's URLs with slugs.
-    Route::get('blog/{slug}', array('as' => 'blog.single', 'uses' => 'BlogController@getSingle'))->where('slug', '[\w\d\-\_]+');
+    Route::get('blog/{id}', array('uses' => 'BlogController@getSingle', 'as' => 'blog.single'))->where('id', '[0-9]+');
     Route::get('/', array('uses' => 'BlogController@getIndex', 'as' => 'blog.index'));
 
     // Post's routes.
@@ -23,6 +23,8 @@ Route::group(['middleware' => ['web']], function () {
     // User's routes.
     Route::resource('user', 'UserController');
 
+    // Post's routes.
+    Route::resource('crawler', 'CrawlerController');
 
     // Routes for the comment elements.
     Route::post('comments/{post_id}', array('uses' => 'CommentsController@store', 'as' => 'comments.store'));
@@ -30,9 +32,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::patch('comments/{id}', array('uses' => 'CommentsController@update', 'as' => 'comments.update'));
     Route::delete('comments/{id}', array('uses' => 'CommentsController@destroy', 'as' => 'comments.destroy'));
     Route::get('comments/{id}/delete', array('uses' => 'CommentsController@delete', 'as' => 'comments.delete'));
-
-    // My profile page.
-//    Route::get('/{id}/myprofile', array('uses' => 'UserController@index', 'as' => 'profile.my_profile'));
 
 });
 

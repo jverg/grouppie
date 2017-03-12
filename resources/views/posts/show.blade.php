@@ -14,11 +14,17 @@
             <!-- Post title -->
             <h1>{{ $post->title }}</h1><br>
 
+            @if ($post->img_url)
+                <img src="{{ $post->img_url}}" width="600" height="450">
+            @elseif($post->image)
+                <img src="{{ asset('post_images/' . $post->image) }}" width="600" height="450">
+            @endif
+
             <!-- The date of the post -->
             <h4>{{ date('M j, Y', strtotime($post->created_at)) }}</h4>
 
             <!-- Post body -->
-            <p class="lead">{!! $post->body !!}</p>
+            <p class="lead">{!! $post->description !!}</p>
 
             <!-- ALL COMMENTS of the post -->
             <div id="backend-comments" style="margin-top: 50px">
