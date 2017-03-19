@@ -7,10 +7,26 @@
 
 @section('content')
 
-    <!-- Main body of each post -->
-    @foreach($posts as $post)
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+    <!-- Main page -->
+    <div class="row">
+
+        <!-- Main body of each post -->
+        <div class="col-md-12">
+
+            <!-- Income sidebar -->
+            <div class="col-md-3">
+                <div class="well" style="background-color: #0de555">
+                    <!-- Income element -->
+                    <dl class="dl-horizontal">
+                        <label>Income</label>
+                        <p>1500</p>
+                    </dl>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                @foreach($posts as $post)
                 <h2>{{ $post->title }}</h2>
 
                 <!-- Link to author's profile -->
@@ -40,10 +56,22 @@
 
                 <!-- Read more button -->
                 <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary">Read more</a>
-                <hr>
+                    <hr>
+                @endforeach
+            </div>
+
+            <!-- Income sidebar -->
+            <div class="col-md-offset-9">
+                <div class="well" style="background-color: #f24f4f">
+                    <!-- Income element -->
+                    <dl class="dl-horizontal">
+                        <label>Expenses</label>
+                        <p>1500</p>
+                    </dl>
+                </div>
             </div>
         </div>
-    @endforeach
+    </div>
 
     <!-- Pagination -->
     <div class="row">
