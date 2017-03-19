@@ -15,14 +15,11 @@
 
     <!-- Create new post button -->
     <div class="col-md-2">
-        <a href="{{ route('posts.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create new post</a>
-        <a href="{{ route('crawler.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create new crawler</a>
-    </div>
-    <div class="col-md-12">
-        <hr>
+        <a href="{{ route('posts.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Create your new post</a>
+        <a href="{{ route('crawler.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Post a site</a>
     </div>
 </div>
-
+<br>
 <div class="row">
     <div class="col-md-12">
 
@@ -33,7 +30,7 @@
             <thead>
                 <th>#</th>
                 <th>Title</th>
-                <th>body</th>
+                {{--<th>body</th>--}}
                 <th>Created at</th>
                 <th>Actions</th>
             </thead>
@@ -44,7 +41,7 @@
                     <tr>
                         <th>{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
-                        <td>{{ substr(strip_tags($post->description), 0, 50) }}</td>
+                        {{--<td>{{ substr(strip_tags($post->description), 0, 50) }}</td>--}}
                         <td>{{ date('M j, Y', strtotime($post->created_at)) }}</td>
                         <td>
                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm btn-info"><i class="fa fa-eye"></i></a>

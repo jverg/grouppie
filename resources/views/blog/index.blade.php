@@ -22,9 +22,9 @@
 
                 {{-- Image of each post --}}
                 @if ($post->img_url)
-                    <img src="{{ $post->img_url }}" width="150" height="150">
+                    <img src="{{ $post->img_url }}" width="40%" height="40%">
                 @elseif($post->image)
-                    <img src="{{ asset('post_images/' . $post->image) }}" width="150" height="150">
+                    <img src="{{ asset('post_images/' . $post->image) }}" width="40%" height="40%">
                 @endif
 
                 <!-- Main content of the post -->
@@ -33,12 +33,13 @@
                 <!-- Comments -->
                 <h5>Comments:<small> {{ $post->comments()->count() }}</small></h5>
 
-                <!-- Read more button -->
+                <!-- If it is from crawler show "Go to site" button -->
                 @if($post->url)
-                    <a href="{{ $post->url }}" class="btn btn-primary" target="_blank">Read more</a>
-                @else
-                    <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary">Read more</a>
+                    <a href="{{ $post->url }}" class="btn btn-primary" target="_blank">Go to site</a>
                 @endif
+
+                <!-- Read more button -->
+                <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary">Read more</a>
                 <hr>
             </div>
         </div>

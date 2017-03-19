@@ -51,7 +51,7 @@ class UserController extends Controller {
         Session::flash('success', 'The user was successfully save!');
 
         // Redirect to the page of the last created post.
-        return redirect()->route('user.show', $user->id);
+        return view('profile.my_profile')->withUser($user);
     }
 
     /**
@@ -66,11 +66,7 @@ class UserController extends Controller {
         $user = User::find($id);
 
         // Return the user's Profile.
-        if($user == Auth::user()) {
-            return view('profile.my_profile')->withUser($user);
-        } else {
-            return view('profile.show')->withUser($user);
-        }
+        return view('profile.my_profile')->withUser($user);
     }
 
     /**
@@ -125,7 +121,7 @@ class UserController extends Controller {
         Session::flash('success', 'Your profile has been successfully updated!');
 
         // Redirect to the page of the last created post.
-        return redirect()->route('user.show', $user->id);
+        return view('profile.my_profile')->withUser($user);
     }
 
     /**

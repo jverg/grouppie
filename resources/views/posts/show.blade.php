@@ -15,9 +15,9 @@
             <h1>{{ $post->title }}</h1><br>
 
             @if ($post->img_url)
-                <img src="{{ $post->img_url}}" width="600" height="450">
+                <img src="{{ $post->img_url}}" width="100%" height="100%">
             @elseif($post->image)
-                <img src="{{ asset('post_images/' . $post->image) }}" width="600" height="450">
+                <img src="{{ asset('post_images/' . $post->image) }}"  width="100%" height="100%">
             @endif
 
             <!-- The date of the post -->

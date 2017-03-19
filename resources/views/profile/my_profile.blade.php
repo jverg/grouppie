@@ -20,8 +20,10 @@
 
                             {{-- User's name --}}
                             <h2>
+                                @if (\Illuminate\Support\Facades\Auth::id() == $user->id)
+                                    <a href="{{ route('user.edit', Auth::id()) }}"><i class="fa fa-pencil"></i></a>
+                                @endif
                                 {{ $user->name }}
-                                <a href="{{ route('user.edit', Auth::id()) }}"><i class="fa fa-pencil pencil-right"></i></a>
                             </h2>
                             </p>
                             <p>
