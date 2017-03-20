@@ -1,7 +1,7 @@
 
 <!-- Navigation file -->
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -29,10 +29,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user">My profile</a></li>
-                            <li><a href="/posts">My posts ( {{ Auth::user()->posts->count() }} )</a></li>
+                            <li><a href="/user"> <i class="fa fa-address-card-o"></i> My profile</a></li>
+                            <li><a href="/"><i class="fa fa-money"></i> My wallet</a></li>
+                            <li><a href="/posts"><i class="fa fa-calendar"></i> My posts ( {{ Auth::user()->posts->count() }} )</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ URL::to('auth/logout') }}">Logout</a></li>
+                            <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
                 @else
@@ -42,3 +43,4 @@
         </div>
     </div>
 </nav>
+<br><br><br><br>

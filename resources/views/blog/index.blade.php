@@ -15,7 +15,7 @@
 
             <!-- Income sidebar -->
             <div class="col-md-3">
-                <div class="well" style="background-color: #0de555">
+                <div class="well" style="background-color: lightgreen;height: 400px;">
                     <!-- Income element -->
                     <dl class="dl-horizontal">
                         <label>Income</label>
@@ -25,7 +25,7 @@
             </div>
 
 
-            <div class="col-md-6">
+            <div class="col-md-6" style="text-align: center">
                 @foreach($posts as $post)
                 <h2>{{ $post->title }}</h2>
 
@@ -56,13 +56,13 @@
 
                 <!-- Read more button -->
                 <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary">Read more</a>
-                    <hr>
+                    <hr style="border-color: darkslategray">
                 @endforeach
             </div>
 
             <!-- Income sidebar -->
             <div class="col-md-offset-9">
-                <div class="well" style="background-color: #f24f4f">
+                <div class="well" style="background-color: lightsalmon; height: 400px;">
                     <!-- Income element -->
                     <dl class="dl-horizontal">
                         <label>Expenses</label>
