@@ -20,6 +20,9 @@ Route::group(['middleware' => ['web']], function () {
     // Post's routes.
     Route::resource('posts', 'PostController');
 
+    // expense's routes.
+    Route::resource('expenses', 'ExpenseController');
+
     // User's routes.
     Route::resource('user', 'UserController');
 
