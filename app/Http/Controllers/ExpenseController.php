@@ -4,8 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ExpenseController extends Controller
-{
+class ExpenseController extends Controller {
+
+    /**
+     * PostController constructor.
+     *
+     * In order to only authenticate user access this.
+     */
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
