@@ -19,7 +19,7 @@
                         <div id="incomes-sidebar" class="well">
                             <!-- Income element -->
                             <dl class="dl-horizontal" style="text-align: center">
-                                <label>Income</label>
+                                <label>Incomes</label>
                                 <hr>
                                 <p>1500</p>
                             </dl>
