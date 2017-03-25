@@ -35,6 +35,16 @@
     margin-top: 4%;
 }
 
+.btn-primary {
+    background-color: #222;
+    border-color: #080808;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #000;
+}
+
 .dropdown-menu {
     background-color: #222;
     border-color: #080808;
@@ -47,7 +57,7 @@
 .dropdown-menu:hover {
      color: #fff;
      background-color: #000;
- }
+}
 
 .dropdown-menu>.divider {
       background-color: #999;
