@@ -62,3 +62,27 @@
 .dropdown-menu>.divider {
       background-color: #999;
 }
+
+#expenses-sidebar {
+    background-color: lightsalmon;
+    height: 85%;
+    width: 10%;
+    position: fixed;
+    border: indianred;
+    border-style: solid;
+    -moz-box-shadow: 0 0 8px #F21B1B;
+    -webkit-box-shadow: 0 0 8px #F21B1B;
+    box-shadow: 0 0 8px #F21B1B;
+}
+
+#incomes-sidebar {
+    background-color: lightgreen;
+    height: 85%;
+    width: 10%;
+    position: fixed;
+    border: limegreen;
+    border-style: solid;
+    -moz-box-shadow: 0 0 8px #27F55B;
+    -webkit-box-shadow: 0 0 8px #27F55B;
+    box-shadow: 0 0 8px #27F55B;
+}
