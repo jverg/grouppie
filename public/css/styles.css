@@ -34,3 +34,21 @@
 .dropdown {
     margin-top: 4%;
 }
+
+.dropdown-menu {
+    background-color: #222;
+    border-color: #080808;
+}
+
+.dropdown-menu>li>a {
+    color: #999;
+}
+
+.dropdown-menu:hover {
+     color: #fff;
+     background-color: #000;
+ }
+
+.dropdown-menu>.divider {
+      background-color: #999;
+}

@@ -17,8 +17,9 @@
             <div class="col-md-3">
                 <div class="well" style="background-color: lightgreen;height: 400px;">
                     <!-- Income element -->
-                    <dl class="dl-horizontal">
+                    <dl class="dl-horizontal"  style="text-align: center">
                         <label>Income</label>
+                        <hr>
                         <p>1500</p>
                     </dl>
                 </div>
@@ -64,8 +65,9 @@
             <div class="col-md-offset-9">
                 <div class="well" style="background-color: lightsalmon; height: 400px;">
                     <!-- Income element -->
-                    <dl class="dl-horizontal">
+                    <dl class="dl-horizontal"  style="text-align: center">
                         <label>Expenses</label>
+                        <hr>
                         <p>1500</p>
                     </dl>
                 </div>

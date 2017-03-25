@@ -31,7 +31,10 @@
 
                     <!-- User's dropdown menu -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <li class="{{ Request::is('/') ? "" : "active" }}">
+                            <i class="fa fa-user fa-2x"></i><span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a href="/user"> <i class="fa fa-address-card-o"></i> My profile</a></li>
                             <li><a href="/"><i class="fa fa-money"></i> My wallet</a></li>
