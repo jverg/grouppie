@@ -2,7 +2,7 @@
 <!-- Navigation file -->
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -37,7 +37,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/user"> <i class="fa fa-address-card-o"></i> My profile</a></li>
-                            <li><a href="/"><i class="fa fa-money"></i> My wallet</a></li>
+                            <li><a href="/expenses/create"><i class="fa fa-money"></i> My wallet</a></li>
                             <li><a href="/posts"><i class="fa fa-calendar"></i> My posts ( {{ Auth::user()->posts->count() }} )</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>

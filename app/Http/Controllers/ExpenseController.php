@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Expense;
 use Illuminate\Http\Request;
 
 class ExpenseController extends Controller {
@@ -30,9 +31,10 @@ class ExpenseController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+
+        // Create expense form.
+        return view('expenses.create');
     }
 
     /**
@@ -41,9 +43,28 @@ class ExpenseController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+
+        // Validate the data.
+        $this->validate($request, array(
+            'amount' => 'required|max:10',
+            'user_id' => 'required',
+            'borrower' => 'required',
+        ));
+
+        // Store in the database
+        $expense = new Expense;
+        $expense->amount = $request->amount;
+        $expense->description = $request->description;
+        $expense->borrower = Auth::user()->id;
+        $expense->user_id = $request->user;
+        $expense->save();
+
+        // Success message just for one request.
+        Session::flash('success', 'Your expense has beed saved successfully');
+
+        // Redirect to the page of the last created post.
+        return redirect()->route('expenses.show', $expense->id);
     }
 
     /**

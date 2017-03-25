@@ -64,10 +64,33 @@
 }
 
 #expenses-sidebar {
-    background-color: lightsalmon;
+     background-color: lightsalmon;
+     height: 85%;
+     width: 13%;
+     position: fixed;
+     border: indianred;
+     border-style: solid;
+     -moz-box-shadow: 0 0 8px #F21B1B;
+     -webkit-box-shadow: 0 0 8px #F21B1B;
+     box-shadow: 0 0 8px #F21B1B;
+ }
+
+#incomes-sidebar {
+    background-color: lightgreen;
     height: 85%;
-    width: 10%;
+    width: 13%;
     position: fixed;
+    border: limegreen;
+    border-style: solid;
+    -moz-box-shadow: 0 0 8px #27F55B;
+    -webkit-box-shadow: 0 0 8px #27F55B;
+    box-shadow: 0 0 8px #27F55B;
+}
+
+#expenses-create {
+    background-color: lightsalmon;
+    width: 95%;
+    height: 400px;
     border: indianred;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #F21B1B;
@@ -75,11 +98,10 @@
     box-shadow: 0 0 8px #F21B1B;
 }
 
-#incomes-sidebar {
+#incomes-create {
     background-color: lightgreen;
-    height: 85%;
-    width: 10%;
-    position: fixed;
+    width: 95%;
+    height: 400px;
     border: limegreen;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #27F55B;

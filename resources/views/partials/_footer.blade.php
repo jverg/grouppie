@@ -1,6 +1,7 @@
 
 <!-- Footer file -->
+<div id="footer">
+    <hr>
 
-<hr>
-
-<p class="text-center">Copyright Jverg - All Rights Reserved</p>
+    <p class="text-center">Copyright Jverg - All Rights Reserved</p>
+</div>
