@@ -5,9 +5,6 @@
       <change type="MODIFICATION" beforePath="Z:/.idea/workspace.xml" afterPath="Z:/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="Z:/README.md" afterPath="Z:/README.md" />
       <change type="MODIFICATION" beforePath="Z:/public/css/styles.css" afterPath="Z:/public/css/styles.css" />
-      <change type="MODIFICATION" beforePath="Z:/resources/views/auth/login.blade.php" afterPath="Z:/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="Z:/resources/views/auth/register.blade.php" afterPath="Z:/resources/views/auth/register.blade.php" />
-      <change type="MODIFICATION" beforePath="Z:/resources/views/layouts/app.blade.php" afterPath="Z:/resources/views/layouts/app.blade.php" />
       <change type="MODIFICATION" beforePath="Z:/resources/views/partials/_nav.blade.php" afterPath="Z:/resources/views/partials/_nav.blade.php" />
     </list>
     <ignored path=".iws" />
@@ -29,21 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://Z:/public/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+            <state relative-caret-position="361">
+              <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_nav.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_nav.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://Z:/resources/views/partials/_nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="50" column="63" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="63" />
+            <state relative-caret-position="463">
+              <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -52,7 +49,7 @@
       <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://Z:/resources/views/posts/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="85">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
@@ -146,8 +143,8 @@
         <option value="Z:/resources/views/auth/login.blade.php" />
         <option value="Z:/resources/views/auth/register.blade.php" />
         <option value="Z:/resources/views/layouts/app.blade.php" />
-        <option value="Z:/public/css/styles.css" />
         <option value="Z:/resources/views/partials/_nav.blade.php" />
+        <option value="Z:/public/css/styles.css" />
       </list>
     </option>
   </component>
@@ -163,7 +160,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -285,15 +282,15 @@
       <workItem from="1489933308636" duration="7780000" />
       <workItem from="1490040505212" duration="3828000" />
       <workItem from="1490301902820" duration="2387000" />
-      <workItem from="1490443513706" duration="5508000" />
+      <workItem from="1490443513706" duration="7536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103778000" />
+    <option name="totallyTimeSpent" value="105806000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2397882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -614,14 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://Z:/resources/views/posts/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://Z:/resources/views/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
@@ -674,14 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://Z:/public/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://Z:/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-442">
@@ -690,10 +671,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://Z:/resources/views/posts/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://Z:/resources/views/partials/_nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="50" column="63" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="63" />
+        <state relative-caret-position="463">
+          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://Z:/public/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding />
         </state>
       </provider>

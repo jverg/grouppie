@@ -40,18 +40,22 @@
                             <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
-                    @else
-                        <li class="{{ Request::is('login') ? "active" : "" }}">
-                            <a href="{{ route('login') }}">
-                                <i class="fa fa-sign-in fa-2x"></i>
-                            </a>
-                        </li>
-                        <li class="{{ Request::is('register') ? "active" : "" }}">
-                            <a href="{{ route('register') }}">
-                                <i class="fa fa-pencil-square-o fa-2x"></i>
-                            </a>
-                        </li>
-                    @endif
+                @else
+
+                    {{-- Login icon --}}
+                    <li class="{{ Request::is('login') ? "active" : "" }}">
+                        <a href="{{ route('login') }}">
+                            <i class="fa fa-sign-in fa-2x"></i>
+                        </a>
+                    </li>
+
+                    {{-- Register icon --}}
+                    <li class="{{ Request::is('register') ? "active" : "" }}">
+                        <a href="{{ route('register') }}" class="{{ Request::is('register') ? "active" : "" }}">
+                            <i class="fa fa-pencil-square-o fa-2x"></i>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
