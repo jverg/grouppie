@@ -18,7 +18,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <!-- Menu buttons -->
-                <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Blog</a></li>
+                <li class="{{ Request::is('/') ? "active" : "" }}">
+                    <a href='/'>
+                        <i class="fa fa-home fa-2x"></i>
+                    </a>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -36,9 +40,18 @@
                             <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     </li>
-                @else
-                    <a href="{{ route('login') }}" class="btn btn-default login-button-top">Login</a>
-                @endif
+                    @else
+                        <li class="{{ Request::is('login') ? "active" : "" }}">
+                            <a href="{{ route('login') }}">
+                                <i class="fa fa-sign-in fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="{{ Request::is('register') ? "active" : "" }}">
+                            <a href="{{ route('register') }}">
+                                <i class="fa fa-pencil-square-o fa-2x"></i>
+                            </a>
+                        </li>
+                    @endif
             </ul>
         </div>
     </div>

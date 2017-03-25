@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@extends('main')
+
+@section('title', '| Login')
 @section('content')
 <div class="container">
     <div class="row">
@@ -65,4 +68,5 @@
         </div>
     </div>
 </div>
+
 @endsection
