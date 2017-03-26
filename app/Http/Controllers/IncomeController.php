@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Expense;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Session;
 
-class ExpenseController extends Controller {
+class IncomeController extends Controller {
 
     /**
-     * ExpenseController constructor.
+     * IncomeController constructor.
      *
      * In order to only authenticate user access this.
      */
@@ -23,8 +20,7 @@ class ExpenseController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -57,15 +53,15 @@ class ExpenseController extends Controller {
         $expense = new Expense;
         $expense->amount = $request->amount;
         $expense->description = $request->description;
-        $expense->lender = $request->lender;
+        $expense->borrower = $request->borrower;
         $expense->user_id = Auth::user()->id;
         $expense->save();
 
         // Success message just for one request.
-        Session::flash('success', 'Your expense has beed saved successfully');
+        Session::flash('success', 'Your income has beed saved successfully');
 
         // Redirect to the page of the last created post.
-        return redirect()->route('expenses.show', $expense->id);
+        return redirect()->route('incomes.show', $income->id);
     }
 
     /**
@@ -74,15 +70,9 @@ class ExpenseController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
-
-        // Brings the user's id.
-        $user = Auth::id();
-
-        // Check if the user has access to this post.
-        $expense = Expense::where('user_id', $user)->find($id);
-
-        return view('expenses.show')->withPost($expense);
+    public function show($id)
+    {
+        //
     }
 
     /**

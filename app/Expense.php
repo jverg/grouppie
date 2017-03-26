@@ -11,8 +11,7 @@ class Expense extends Model {
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Users()
-    {
+    public function Users() {
         return $this->belongsTo('App\User');
     }
 }

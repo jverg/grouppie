@@ -29,10 +29,10 @@
 
                             <!-- Body of the table -->
                             <tbody>
-                            @foreach($expenses as $expense)
+                            @foreach($incomes as $income)
                                 <tr>
-                                    {{--<td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>--}}
-                                    {{--<td style="text-align: center">{{ $expense->amount }} €</td>--}}
+                                    <td style="text-align: center">{{ \App\User::find($income->borrower)->name }}</td>
+                                    <td style="text-align: center">{{ $income->amount }} €</td>
                                 </tr>
                             @endforeach
                             </tbody>

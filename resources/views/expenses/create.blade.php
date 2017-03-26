@@ -19,15 +19,15 @@
 
                         <hr>
                         <!-- Create new post form -->
-                        {!! Form::open(array('route' => 'expenses.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+                        {!! Form::open(array('route' => 'incomes.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
                             <!-- Amount -->
                             {{ Form::label('amount', 'Amount:') }}
                             {{ Form::text('amount', null, array('class' => 'form-control')) }}
 
                             <!-- User -->
-                            {{ Form::label('user_id', 'Borrower:') }}
-                            {{ Form::text('user_id', null, array('class' => 'form-control')) }}
+                            {{ Form::label('borrower', 'Borrower:') }}
+                            {{ Form::text('borrower', null, array('class' => 'form-control')) }}
 
                             <!-- Description -->
                             {{ Form::label('description', "Income description:", array('class' => 'form-spacing-top')) }}
@@ -58,8 +58,8 @@
                         {{ Form::text('amount', null, array('class' => 'form-control')) }}
 
                         <!-- User -->
-                        {{ Form::label('user_id', 'Lender:') }}
-                        {{ Form::text('user_id', null, array('class' => 'form-control')) }}
+                        {{ Form::label('lender', 'Lender:') }}
+                        {{ Form::text('lender', null, array('class' => 'form-control')) }}
 
                         <!-- Description -->
                         {{ Form::label('description', "Expense description:", array('class' => 'form-spacing-top')) }}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expense;
+use App\Income;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -27,9 +28,13 @@ class BlogController extends Controller {
         // Pagination for posts.
         $posts = Post::orderBy('id', 'desc')->paginate(4);
         $expenses = Expense::where('user_id', $user)->orderBy('id', 'desc')->get();
+        $incomes = Income::where('user_id', $user)->orderBy('id', 'desc')->get();
 
         // Return view.
-        return view('blog.index')->withPosts($posts)->withExpenses($expenses);
+        return view('blog.index')
+            ->withPosts($posts)
+            ->withExpenses($expenses)
+            ->withIncomes($incomes);
     }
 
     /**
