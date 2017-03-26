@@ -30,18 +30,27 @@
 
                             <!-- Body of the table -->
                             <tbody>
-                            @foreach($incomes as $income)
-                                <tr>
-                                    <td style="text-align: center">{{ \App\User::find($income->borrower)->name }}</td>
-                                    <td style="text-align: center">{{ $income->amount }} €</td>
-                                    <td>
-                                        {{ Form::open(array('method' => 'DELETE', 'route' => array('incomes.destroy', $income->id))) }}
-                                            {{ Form::hidden('id', $income->id) }}
-                                            {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
-                                        {{ Form::close() }}
-                                    </td>
-                                </tr>
-                            @endforeach
+                            @if($incomes)
+                                @foreach($incomes as $income)
+                                    <tr>
+                                        <td style="text-align: center">{{ \App\User::find($income->borrower)->name }}</td>
+                                        <td style="text-align: center">{{ $income->amount }} €</td>
+                                        <td>
+                                            {{ Form::open(array('method' => 'DELETE', 'route' => array('incomes.destroy', $income->id))) }}
+                                                {{ Form::hidden('id', $income->id) }}
+                                                {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
+                                           {{ Form::close() }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td style="text-align: center">
+                                    <a href="{{ route('expenses.create') }}" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </dl>
@@ -51,7 +60,6 @@
 
         <!-- Expenses sidebar -->
         <div class="col-md-offset-6">
-            <div class="row">
             <div id="expenses-view" class="well">
                 <!-- Income element -->
                 <dl class="dl-horizontal" style="text-align: center">
@@ -69,22 +77,30 @@
 
                         <!-- Body of the table -->
                         <tbody>
-                        @foreach($expenses as $expense)
-                            <tr>
-                                <td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>
-                                <td style="text-align: center">{{ $expense->amount }} €</td>
-                                <td>
-                                    {{ Form::open(array('method' => 'DELETE', 'route' => array('expenses.destroy', $expense->id))) }}
-                                        {{ Form::hidden('id', $expense->id) }}
-                                        {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
-                                    {{ Form::close() }}
-                                </td>
-                            </tr>
-                        @endforeach
+                        @if($expenses)
+                            @foreach($expenses as $expense)
+                                <tr>
+                                    <td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>
+                                    <td style="text-align: center">{{ $expense->amount }} €</td>
+                                    <td>
+                                        {{ Form::open(array('method' => 'DELETE', 'route' => array('expenses.destroy', $expense->id))) }}
+                                            {{ Form::hidden('id', $expense->id) }}
+                                            {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
+                                        {{ Form::close() }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center">
+                                <a href="{{ route('expenses.create') }}" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 </dl>
-            </div>
             </div>
         </div>
     </div>
