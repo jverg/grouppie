@@ -20,8 +20,11 @@ Route::group(['middleware' => ['web']], function () {
     // Post's routes.
     Route::resource('posts', 'PostController');
 
-    // expense's routes.
+    // Expense's routes.
     Route::resource('expenses', 'ExpenseController');
+
+    // Income's routes.
+    Route::resource('incomes', 'IncomeController');
 
     // User's routes.
     Route::resource('user', 'UserController');
