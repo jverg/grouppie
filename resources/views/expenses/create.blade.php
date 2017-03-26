@@ -22,16 +22,16 @@
                         {!! Form::open(array('route' => 'incomes.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
                             <!-- Amount -->
-                            {{ Form::label('amount', 'Amount:') }}
-                            {{ Form::text('amount', null, array('class' => 'form-control')) }}
+                            {{ Form::label('amount_income', 'Amount:') }}
+                            {{ Form::text('amount_income', null, array('class' => 'form-control')) }}
 
                             <!-- User -->
                             {{ Form::label('borrower', 'Borrower:') }}
                             {{ Form::text('borrower', null, array('class' => 'form-control')) }}
 
                             <!-- Description -->
-                            {{ Form::label('description', "Income description:", array('class' => 'form-spacing-top')) }}
-                            {{ Form::textarea('description', null, array('class' => 'form-control')) }}
+                            {{ Form::label('description_income', "Income description:", array('class' => 'form-spacing-top')) }}
+                            {{ Form::textarea('description_income', null, array('class' => 'form-control')) }}
 
                             <!-- Submit button -->
                             {{ Form::Submit('Create income', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}

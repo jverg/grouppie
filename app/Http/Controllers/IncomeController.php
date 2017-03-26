@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Income;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Session;
 
 class IncomeController extends Controller {
 
@@ -44,18 +47,21 @@ class IncomeController extends Controller {
     public function store(Request $request) {
 
         // Validate the data.
-        $this->validate($request, array(
-            'amount' => 'required|max:10',
-            'user_id' => 'required',
-        ));
+        if($request->amount_income || $request->borrower || $request->description_income) {
+            $this->validate($request, array(
+                'amount_income' => 'required|max:10',
+                'borrower' => 'required',
+                'description_income' => 'required'
+            ));
+        }
 
         // Store in the database
-        $expense = new Expense;
-        $expense->amount = $request->amount;
-        $expense->description = $request->description;
-        $expense->borrower = $request->borrower;
-        $expense->user_id = Auth::user()->id;
-        $expense->save();
+        $income = new Income;
+        $income->amount = $request->amount_income;
+        $income->description = $request->description_income;
+        $income->borrower = $request->borrower;
+        $income->user_id = Auth::user()->id;
+        $income->save();
 
         // Success message just for one request.
         Session::flash('success', 'Your income has beed saved successfully');

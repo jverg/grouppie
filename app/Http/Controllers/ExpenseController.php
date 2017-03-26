@@ -48,10 +48,13 @@ class ExpenseController extends Controller {
     public function store(Request $request) {
 
         // Validate the data.
-        $this->validate($request, array(
-            'amount' => 'required|max:10',
-            'user_id' => 'required',
-        ));
+        if($request->amount || $request->lender) {
+            $this->validate($request, array(
+                'amount' => 'required|max:10',
+                'lender' => 'required',
+                'description' => 'required'
+            ));
+        }
 
         // Store in the database
         $expense = new Expense;
