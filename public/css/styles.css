@@ -45,6 +45,16 @@
     background-color: #000;
 }
 
+.pagination {
+    background-color: #222;
+    border-color: #080808;
+}
+
+.pagination:hover {
+    color: #fff;
+    background-color: #000;
+}
+
 .dropdown-menu {
     background-color: #222;
     border-color: #080808;
@@ -90,7 +100,7 @@
 #expenses-create {
     background-color: lightsalmon;
     width: 95%;
-    height: 400px;
+    height: 560px;
     border: indianred;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #F21B1B;
@@ -101,7 +111,7 @@
 #incomes-create {
     background-color: lightgreen;
     width: 95%;
-    height: 400px;
+    height: 560px;
     border: limegreen;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #27F55B;

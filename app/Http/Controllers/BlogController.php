@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Expense;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,9 +22,10 @@ class BlogController extends Controller {
 
         // Pagination for posts.
         $posts = Post::orderBy('id', 'desc')->paginate(4);
+        $expenses = Expense::orderBy('id', 'desc')->paginate(4);
 
         // Return view.
-        return view('blog.index')->withPosts($posts);
+        return view('blog.index')->withPosts($posts)->withExpenses($expenses);
     }
 
     /**

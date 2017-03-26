@@ -18,7 +18,7 @@
                     <dl class="dl-horizontal" style="text-align: center">
                         <label>Incomes</label>
                         <hr>
-                        <p>1500</p>
+                        <p>12345</p>
                     </dl>
                 </div>
             </div>
@@ -31,7 +31,25 @@
                 <dl class="dl-horizontal" style="text-align: center">
                     <label>Expenses</label>
                     <hr>
-                    <p>1500</p>
+                    <!-- Table with all expenses -->
+                    <table class="table">
+
+                        <!-- Headers of the table -->
+                        <thead>
+                        <th style="text-align: center">To</th>
+                        <th style="text-align: center">Amount</th>
+                        </thead>
+
+                        <!-- Body of the table -->
+                        <tbody>
+                        @foreach($expenses as $expense)
+                            <tr>
+                                <td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>
+                                <td style="text-align: center">{{ $expense->amount }} €</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </dl>
             </div>
         </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Expense;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Session;
 
 class ExpenseController extends Controller {
 
@@ -49,15 +51,14 @@ class ExpenseController extends Controller {
         $this->validate($request, array(
             'amount' => 'required|max:10',
             'user_id' => 'required',
-            'borrower' => 'required',
         ));
 
         // Store in the database
         $expense = new Expense;
         $expense->amount = $request->amount;
         $expense->description = $request->description;
-        $expense->borrower = Auth::user()->id;
-        $expense->user_id = $request->user;
+        $expense->lender = $request->user_id;
+        $expense->user_id = Auth::user()->id;
         $expense->save();
 
         // Success message just for one request.
@@ -73,9 +74,15 @@ class ExpenseController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id) {
+
+        // Brings the user's id.
+        $user = Auth::id();
+
+        // Check if the user has access to this post.
+        $expense = Expense::where('user_id', $user)->find($id);
+
+        return view('expenses.show')->withPost($expense);
     }
 
     /**
