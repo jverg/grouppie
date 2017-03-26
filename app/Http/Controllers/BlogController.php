@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Expense;
-use App\Income;
 use App\Post;
+use App\Wallet;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -29,10 +28,10 @@ class BlogController extends Controller {
         $posts = Post::orderBy('id', 'desc')->paginate(4);
 
         // Get all the expenses.
-        $expenses = Expense::where('user_id', $user)->orderBy('id', 'desc')->get();
+        $expenses = Wallet::where('borrower', $user)->orderBy('id', 'desc')->get();
 
         // Get all the incomes.
-        $incomes = Income::where('user_id', $user)->orderBy('id', 'desc')->get();
+        $incomes = Wallet::where('lender', $user)->orderBy('id', 'desc')->get();
 
         // Return the view with parameters.
         return view('blog.index')
