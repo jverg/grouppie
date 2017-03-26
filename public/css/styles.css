@@ -100,7 +100,7 @@
 #expenses-create {
     background-color: lightsalmon;
     width: 95%;
-    height: 560px;
+    height: 600px;
     border: indianred;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #F21B1B;
@@ -111,7 +111,7 @@
 #incomes-create {
     background-color: lightgreen;
     width: 95%;
-    height: 560px;
+    height: 600px;
     border: limegreen;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #27F55B;

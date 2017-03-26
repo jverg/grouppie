@@ -59,7 +59,7 @@
                                                 <!-- Income element -->
                                                 <dl class="dl-horizontal">
                                                     <div style="text-align: center">
-                                                        <label>Incomes</label>
+                                                        <label><h3>Income</h3></label>
                                                     </div>
 
                                                     <hr>
@@ -144,7 +144,7 @@
                                             <dl class="dl-horizontal">
 
                                                 <div style="text-align: center">
-                                                    <label>Expenses</label>
+                                                    <label><h3>Expense</h3></label>
                                                 </div>
 
                                                 <hr>
