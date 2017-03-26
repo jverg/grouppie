@@ -52,7 +52,7 @@
                 </dl>
                 <hr>
 
-                <!-- Delete and Edit buttons -->
+                <!-- Cancel and Save buttons -->
                 <div class="row">
 
                     <!-- Cancel button -->

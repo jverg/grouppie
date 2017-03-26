@@ -121,7 +121,7 @@
 
 #expenses-view {
     background-color: lightsalmon;
-    width: 95%;
+    width: 85%;
     border: indianred;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #F21B1B;
@@ -131,7 +131,7 @@
 
 #incomes-view {
     background-color: lightgreen;
-    width: 95%;
+    width: 85%;
     border: limegreen;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #27F55B;

@@ -67,7 +67,7 @@ class IncomeController extends Controller {
         Session::flash('success', 'Your income has beed saved successfully');
 
         // Redirect to the page of the last created post.
-        return redirect()->route('incomes.show', $income->id);
+        return redirect()->route('expenses.index', $income->id);
     }
 
     /**
@@ -110,8 +110,14 @@ class IncomeController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+
+        // Find the income to delete.
+        $expense = Income::find($id);
+        $expense->delete();
+
+        // Message when deletion took place.
+        Session::flash('success', 'The income was successfully deleted!');
+        return redirect()->route('expenses.index');
     }
 }

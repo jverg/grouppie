@@ -81,7 +81,7 @@ class ExpenseController extends Controller {
         Session::flash('success', 'Your expense has beed saved successfully');
 
         // Redirect to the page of the last created expense.
-        return redirect()->route('expenses.show', $expense->id);
+        return redirect()->route('expenses.index', $expense->id);
     }
 
     /**
@@ -130,8 +130,14 @@ class ExpenseController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+
+        // Find the expense to delete.
+        $expense = Expense::find($id);
+        $expense->delete();
+
+        // Message when deletion took place.
+        Session::flash('success', 'The expense was successfully deleted!');
+        return redirect()->route('expenses.index');
     }
 }
