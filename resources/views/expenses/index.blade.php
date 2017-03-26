@@ -48,7 +48,44 @@
                                 <td></td>
                                 <td></td>
                                 <td style="text-align: center">
-                                    <a href="{{ route('expenses.create') }}" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+                                    <a href="" class="btn btn-success btn-xs" data-toggle="modal" data-target="#createIncome"><i class="fa fa-plus"></i></a>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="createIncome" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            {{-- Content of the modal --}}
+                                            <div id="incomes-create" class="well">
+                                                <!-- Income element -->
+                                                <dl class="dl-horizontal">
+                                                    <div style="text-align: center">
+                                                        <label>Incomes</label>
+                                                    </div>
+
+                                                    <hr>
+                                                    <!-- Create new post form -->
+                                                    {!! Form::open(array('route' => 'incomes.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+
+                                                        <!-- Amount -->
+                                                        {{ Form::label('amount_income', 'Amount:') }}
+                                                        {{ Form::text('amount_income', null, array('class' => 'form-control')) }}
+
+                                                        <!-- User -->
+                                                        {{ Form::label('borrower', 'Borrower:') }}
+                                                        {{ Form::text('borrower', null, array('class' => 'form-control')) }}
+
+                                                        <!-- Description -->
+                                                        {{ Form::label('description_income', "Income description:", array('class' => 'form-spacing-top')) }}
+                                                        {{ Form::textarea('description_income', null, array('class' => 'form-control')) }}
+
+                                                        <!-- Submit button -->
+                                                        {{ Form::Submit('Create income', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
+                                                    {!! Form::close() !!}
+                                                </dl>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -95,7 +132,45 @@
                             <td></td>
                             <td></td>
                             <td style="text-align: center">
-                                <a href="{{ route('expenses.create') }}" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+                                <a href="" class="btn btn-success btn-xs" data-toggle="modal" data-target="#createExpense"><i class="fa fa-plus"></i></a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="createExpense" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        {{-- Content of the modal --}}
+                                        <div id="expenses-create" class="well">
+                                            <!-- Income element -->
+                                            <dl class="dl-horizontal">
+
+                                                <div style="text-align: center">
+                                                    <label>Expenses</label>
+                                                </div>
+
+                                                <hr>
+                                                <!-- Create new post form -->
+                                                {!! Form::open(array('route' => 'expenses.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+
+                                                    <!-- Amount -->
+                                                    {{ Form::label('amount', 'Amount:') }}
+                                                    {{ Form::text('amount', null, array('class' => 'form-control')) }}
+
+                                                    <!-- User -->
+                                                    {{ Form::label('lender', 'Lender:') }}
+                                                    {{ Form::text('lender', null, array('class' => 'form-control')) }}
+
+                                                    <!-- Description -->
+                                                    {{ Form::label('description', "Expense description:", array('class' => 'form-spacing-top')) }}
+                                                    {{ Form::textarea('description', null, array('class' => 'form-control')) }}
+
+                                                    <!-- Submit button -->
+                                                    {{ Form::Submit('Create expense', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
+                                                {!! Form::close() !!}
+                                            </dl>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         </tbody>
