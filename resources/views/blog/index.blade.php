@@ -16,9 +16,27 @@
                 <div id="incomes-sidebar" class="well">
                     <!-- Income element -->
                     <dl class="dl-horizontal" style="text-align: center">
-                        <label>Incomes</label>
+                        <label><i class="fa fa-smile-o fa-2x"></i></label>
                         <hr>
-                        <p>12345</p>
+                        <!-- Table with all expenses -->
+                        <table class="table">
+
+                            <!-- Headers of the table -->
+                            <thead>
+                            <th style="text-align: center">From</th>
+                            <th style="text-align: center">Amount</th>
+                            </thead>
+
+                            <!-- Body of the table -->
+                            <tbody>
+                            @foreach($expenses as $expense)
+                                <tr>
+                                    {{--<td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>--}}
+                                    {{--<td style="text-align: center">{{ $expense->amount }} €</td>--}}
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </dl>
                 </div>
             </div>
@@ -29,7 +47,7 @@
             <div id="expenses-sidebar" class="well">
                 <!-- Income element -->
                 <dl class="dl-horizontal" style="text-align: center">
-                    <label>Expenses</label>
+                    <label><i class="fa fa-frown-o fa-2x"></i></label>
                     <hr>
                     <!-- Table with all expenses -->
                     <table class="table">
