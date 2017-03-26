@@ -6,6 +6,7 @@ use App\Expense;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class BlogController
@@ -20,9 +21,12 @@ class BlogController extends Controller {
      */
     public function getIndex() {
 
+        // Brings the user's id.
+        $user = Auth::id();
+
         // Pagination for posts.
         $posts = Post::orderBy('id', 'desc')->paginate(4);
-        $expenses = Expense::orderBy('id', 'desc')->paginate(4);
+        $expenses = Expense::where('user_id', $user)->orderBy('id', 'desc')->get();
 
         // Return view.
         return view('blog.index')->withPosts($posts)->withExpenses($expenses);
