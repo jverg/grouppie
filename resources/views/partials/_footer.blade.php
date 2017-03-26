@@ -3,5 +3,5 @@
 <div id="footer">
     <hr>
 
-    <p class="text-center">Copyright Jverg - All Rights Reserved</p>
+    <p class="text-center">Copyright {{ date('Y') }} &copy; jverg - All Rights Reserved</p>
 </div>
