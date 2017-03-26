@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller {
 
     /**
-     * Home page.
+     * Home page of grouppie.
      *
      * @return mixed
      */
@@ -27,10 +27,14 @@ class BlogController extends Controller {
 
         // Pagination for posts.
         $posts = Post::orderBy('id', 'desc')->paginate(4);
+
+        // Get all the expenses.
         $expenses = Expense::where('user_id', $user)->orderBy('id', 'desc')->get();
+
+        // Get all the incomes.
         $incomes = Income::where('user_id', $user)->orderBy('id', 'desc')->get();
 
-        // Return view.
+        // Return the view with parameters.
         return view('blog.index')
             ->withPosts($posts)
             ->withExpenses($expenses)
@@ -45,7 +49,7 @@ class BlogController extends Controller {
      */
     public function getSingle($id) {
 
-        // Fetch from DB.
+        // Fetch the post from DB.
         $post = Post::find($id);
 
         // Return the view.

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expense;
+use App\Income;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -23,9 +24,21 @@ class ExpenseController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+
+        // Brings the user's id.
+        $user = Auth::id();
+
+        // Brings the current user's expenses.
+        $expenses = Expense::where('user_id', $user)->orderBy('id', 'desc')->paginate(4);
+
+        // Brings the current user's incomes.
+        $incomes = Income::where('user_id', $user)->orderBy('id', 'desc')->paginate(4);
+
+        // Return a view and pass in the above variables.
+        return view('expenses.index')
+            ->withExpenses($expenses)
+            ->withIncomes($incomes);
     }
 
     /**
@@ -35,7 +48,7 @@ class ExpenseController extends Controller {
      */
     public function create() {
 
-        // Create expense form.
+        // Create expense-income form.
         return view('expenses.create');
     }
 
@@ -56,7 +69,7 @@ class ExpenseController extends Controller {
             ));
         }
 
-        // Store in the database
+        // Store the expense in the database
         $expense = new Expense;
         $expense->amount = $request->amount;
         $expense->description = $request->description;
@@ -64,10 +77,10 @@ class ExpenseController extends Controller {
         $expense->user_id = Auth::user()->id;
         $expense->save();
 
-        // Success message just for one request.
+        // Success message if the expense created successfully.
         Session::flash('success', 'Your expense has beed saved successfully');
 
-        // Redirect to the page of the last created post.
+        // Redirect to the page of the last created expense.
         return redirect()->route('expenses.show', $expense->id);
     }
 

@@ -118,3 +118,23 @@
     -webkit-box-shadow: 0 0 8px #27F55B;
     box-shadow: 0 0 8px #27F55B;
 }
+
+#expenses-view {
+    background-color: lightsalmon;
+    width: 95%;
+    border: indianred;
+    border-style: solid;
+    -moz-box-shadow: 0 0 8px #F21B1B;
+    -webkit-box-shadow: 0 0 8px #F21B1B;
+    box-shadow: 0 0 8px #F21B1B;
+}
+
+#incomes-view {
+    background-color: lightgreen;
+    width: 95%;
+    border: limegreen;
+    border-style: solid;
+    -moz-box-shadow: 0 0 8px #27F55B;
+    -webkit-box-shadow: 0 0 8px #27F55B;
+    box-shadow: 0 0 8px #27F55B;
+}

@@ -13,13 +13,15 @@ class CommentsController extends Controller {
 
     /**
      * CommentsController constructor.
+     *
+     * Make the view of the comments to be only from authenticated users
      */
     public function __construct() {
         $this->middleware('auth', array('except' => 'store'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created comment in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -50,7 +52,7 @@ class CommentsController extends Controller {
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified comment.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -81,13 +83,13 @@ class CommentsController extends Controller {
             return view('comments.edit')->withComment($comment);
         } else {
 
-            // Redirect the user to hoem page.
+            // Redirect the user to home page.
             return redirect('/');
         }
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified comment in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -115,7 +117,7 @@ class CommentsController extends Controller {
     }
 
     /**
-     * Function that delete a comment
+     * Function that delete a comment.
      *
      * @param $id
      * @return mixed
@@ -130,7 +132,7 @@ class CommentsController extends Controller {
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified comment from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -142,7 +144,7 @@ class CommentsController extends Controller {
         $post_id = $comment->post->id;
         $comment->delete();
 
-        // Success message if a comment deleted successfully.
+        // Success message if a comment has been deleted successfully.
         Session::flash('success', 'Delete comment');
 
         // Redirect to post's page.
