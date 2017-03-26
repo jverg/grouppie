@@ -37,8 +37,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/user"> <i class="fa fa-address-card-o"></i> My profile</a></li>
-                            <li><a href="/wallets"><i class="fa fa-money"></i> My wallet</a></li>
-                            <li><a href="/posts"><i class="fa fa-calendar"></i> My posts ( {{ Auth::user()->posts->count() }} )</a></li>
+                            <li><a href="/wallets"><i class="fa fa-money"></i> My wallet ({{ \App\Wallet::wholeCash() }}€)</a></li>
+                            <li><a href="/posts"><i class="fa fa-calendar"></i> My posts ({{ Auth::user()->posts->count() }})</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>

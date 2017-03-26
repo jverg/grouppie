@@ -36,8 +36,8 @@
                                         <td style="text-align: center">{{ $income->amount }} €</td>
                                         <td>
                                             {{ Form::open(array('method' => 'DELETE', 'route' => array('wallets.destroy', $income->id))) }}
-                                            {{ Form::hidden('id', $income->id) }}
-                                            {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
+                                                {{ Form::hidden('id', $income->id) }}
+                                                {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
                                             {{ Form::close() }}
                                         </td>
                                     </tr>
@@ -63,22 +63,22 @@
 
                                                     <hr>
                                                     <!-- Create new post form -->
-                                                {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+                                                    {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
-                                                <!-- Amount -->
-                                                {{ Form::label('income_amount', 'Amount:') }}
-                                                {{ Form::text('income_amount', null, array('class' => 'form-control')) }}
+                                                        <!-- Amount -->
+                                                        {{ Form::label('income_amount', 'Amount:') }}
+                                                        {{ Form::text('income_amount', null, array('class' => 'form-control')) }}
 
-                                                <!-- User -->
-                                                {{ Form::label('borrower', 'Borrower:') }}
-                                                {{ Form::text('borrower', null, array('class' => 'form-control')) }}
+                                                        <!-- User -->
+                                                        {{ Form::label('borrower', 'Borrower:') }}
+                                                        {{ Form::text('borrower', null, array('class' => 'form-control')) }}
 
-                                                <!-- Description -->
-                                                {{ Form::label('income_description', "Income description:", array('class' => 'form-spacing-top')) }}
-                                                {{ Form::textarea('income_description', null, array('class' => 'form-control')) }}
+                                                        <!-- Description -->
+                                                        {{ Form::label('income_description', "Income description:", array('class' => 'form-spacing-top')) }}
+                                                        {{ Form::textarea('income_description', null, array('class' => 'form-control')) }}
 
-                                                <!-- Submit button -->
-                                                    {{ Form::Submit('Create income', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
+                                                        <!-- Submit button -->
+                                                        {{ Form::Submit('Create income', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
                                                     {!! Form::close() !!}
                                                 </dl>
                                             </div>
@@ -120,8 +120,8 @@
                                     <td style="text-align: center">{{ $expense->amount }} €</td>
                                     <td>
                                         {{ Form::open(array('method' => 'DELETE', 'route' => array('wallets.destroy', $expense->id))) }}
-                                        {{ Form::hidden('id', $expense->id) }}
-                                        {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
+                                            {{ Form::hidden('id', $expense->id) }}
+                                            {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
                                         {{ Form::close() }}
                                     </td>
                                 </tr>
@@ -148,22 +148,22 @@
 
                                                 <hr>
                                                 <!-- Create new post form -->
-                                            {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+                                                {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
-                                            <!-- Amount -->
-                                            {{ Form::label('expense_amount', 'Amount:') }}
-                                            {{ Form::text('expense_amount', null, array('class' => 'form-control')) }}
+                                                    <!-- Amount -->
+                                                    {{ Form::label('expense_amount', 'Amount:') }}
+                                                    {{ Form::text('expense_amount', null, array('class' => 'form-control')) }}
 
-                                            <!-- User -->
-                                            {{ Form::label('lender', 'Lender:') }}
-                                            {{ Form::text('lender', null, array('class' => 'form-control')) }}
+                                                    <!-- User -->
+                                                    {{ Form::label('lender', 'Lender:') }}
+                                                    {{ Form::text('lender', null, array('class' => 'form-control')) }}
 
-                                            <!-- Description -->
-                                            {{ Form::label('expense_description', "Expense description:", array('class' => 'form-spacing-top')) }}
-                                            {{ Form::textarea('expense_description', null, array('class' => 'form-control')) }}
+                                                    <!-- Description -->
+                                                    {{ Form::label('expense_description', "Expense description:", array('class' => 'form-spacing-top')) }}
+                                                    {{ Form::textarea('expense_description', null, array('class' => 'form-control')) }}
 
-                                            <!-- Submit button -->
-                                                {{ Form::Submit('Create expense', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
+                                                    <!-- Submit button -->
+                                                    {{ Form::Submit('Create expense', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
                                                 {!! Form::close() !!}
                                             </dl>
                                         </div>
