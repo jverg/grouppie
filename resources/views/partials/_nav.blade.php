@@ -33,11 +33,15 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <li class="{{ Request::is('/') ? "" : "active" }}">
-                            <i class="fa fa-user fa-2x"></i><span class="caret"></span>
+                            <span>{{ \Illuminate\Support\Facades\Auth::user()->name }} </span><span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user"> <i class="fa fa-address-card-o"></i> My profile</a></li>
-                            <li><a href="/wallets"><i class="fa fa-money"></i> My wallet ({{ \App\Wallet::wholeCash() }}€)</a></li>
+                            <li><a href="/user"> <i class="fa fa-user"></i> My profile</a></li>
+                            @if(\App\Wallet::wholeCash() >= 0)
+                                <li><a href="/wallets"><i class="fa fa-money"></i> My wallet <span style="color: lawngreen">({{ \App\Wallet::wholeCash() }}€)</span></a></li>
+                            @else
+                                <li><a href="/wallets"><i class="fa fa-money"></i> My wallet <span style="color: orangered">({{ \App\Wallet::wholeCash() }}€)</span></a></li>
+                            @endif
                             <li><a href="/posts"><i class="fa fa-calendar"></i> My posts ({{ Auth::user()->posts->count() }})</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
