@@ -18,7 +18,7 @@
         <h4><span class="fa fa-user"></span>
         <a href="{{ route('user.show', \App\User::find($post->user_id)->id) }}">
             {{ \App\User::find($post->user_id)->name }}
-        </a>{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}
+        </a>{{--{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}--}}
         </h4>
 
         {{-- Image for each post --}}
@@ -33,13 +33,13 @@
     </div>
 </div>
 
-<!-- COMMENTS -->
+<!-- Comments -->
 @foreach($post->comments as $comment)
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <table class="table">
 
-                <!-- Username of the comment -->
+                <!-- Username of the author's comment -->
                 <thead>
                 <th><span class="fa fa-user"></span>{{ ' ' . $comment->name }}</th>
                 </thead>

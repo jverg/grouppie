@@ -9,11 +9,12 @@
 
 <div class="row">
     <div class="col-md-10">
+
         <!-- Title of the page -->
         <h1>All Posts</h1>
     </div>
 
-    <!-- Create new post button -->
+    <!-- Create new post buttons -->
     <div class="col-md-2">
         <a href="{{ route('posts.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Create your new post</a>
         <a href="{{ route('crawler.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Post a site</a>

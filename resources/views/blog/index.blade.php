@@ -3,7 +3,7 @@
 
 @extends('main')
 
-@section('title', "| Grouppie" )
+@section('title', "| Groupie" )
 
 @section('content')
 
@@ -14,13 +14,12 @@
         <div class="col-md-2">
             <div class="row">
                 <div id="incomes-sidebar" class="well">
-                    <!-- Income element -->
                     <dl class="dl-horizontal" style="text-align: center">
                         <label><i class="fa fa-smile-o fa-2x"></i></label>
                         <hr>
-                        <!-- Table with all expenses -->
-                        <table class="table">
 
+                        <!-- Table with all incomes -->
+                        <table class="table">
                             <!-- Headers of the table -->
                             <thead>
                             <th style="text-align: center">From</th>
@@ -45,7 +44,6 @@
         <!-- Expenses sidebar -->
         <div class="col-md-offset-2">
             <div id="expenses-sidebar" class="well">
-                <!-- Income element -->
                 <dl class="dl-horizontal" style="text-align: center">
                     <label><i class="fa fa-frown-o fa-2x"></i></label>
                     <hr>
@@ -72,6 +70,7 @@
             </div>
         </div>
 
+        {{-- Main element with the posts --}}
         <div class="col-md-9 col-md-offset-4" style="text-align: center">
             @foreach($posts as $post)
                 <h2>{{ $post->title }}</h2>
@@ -79,7 +78,7 @@
                 <h4><span class="fa fa-user"></span>
                     <a href="{{ route('user.show', \App\User::find($post->user_id)->id) }}">
                         {{ \App\User::find($post->user_id)->name }}
-                    </a>{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}
+                   </a> {{--{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}--}}
                 </h4>
                 {{-- Image of each post --}}
                 @if ($post->img_url)

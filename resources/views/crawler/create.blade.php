@@ -22,18 +22,18 @@
 
     <div class="row">
         <div class="col-md-8">
-            <h1>Create new crawler</h1>
+            <h1>Create new post</h1>
             <hr>
 
             <!-- Create new post form -->
             {!! Form::open(array('route' => 'crawler.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
                 <!-- Title -->
-                {{ Form::label('url', 'Title:') }}
+                {{ Form::label('url', 'URL:') }}
                 {{ Form::text('url', null, array('class' => 'form-control')) }}
 
                 <!-- Submit button -->
-                {{ Form::Submit('Create crawler', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
+                {{ Form::Submit('Create post', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
             {!! Form::close() !!}
 
         </div>

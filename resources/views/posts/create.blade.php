@@ -35,11 +35,11 @@
                 {{ Form::label('title', 'Title:') }}
                 {{ Form::text('title', null, array('class' => 'form-control')) }}
 
-                <!--Image-->
+                <!-- Image -->
                 {{ Form::label('post_images', 'Upload a post\'s image:') }}
                 {{ Form::file('post_images') }}
 
-                <!-- Body -->
+                <!-- Description -->
                 {{ Form::label('description', "Post description:", array('class' => 'form-spacing-top')) }}
                 {{ Form::textarea('description', null, array('class' => 'form-control')) }}
 

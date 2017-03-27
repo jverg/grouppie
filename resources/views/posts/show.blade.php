@@ -26,7 +26,7 @@
             <!-- Post body -->
             <p class="lead">{!! $post->description !!}</p>
 
-            <!-- ALL COMMENTS of the post -->
+            <!-- All comments of the post -->
             <div id="backend-comments" style="margin-top: 50px">
                 <h3>Comments:<small>{{ $post->comments()->count() }}</small></h3>
                 <table class="table">

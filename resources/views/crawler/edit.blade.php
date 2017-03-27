@@ -28,7 +28,7 @@
             {{ Form::label('title', 'Title:') }}
             {{ Form::text('title', null, array('class' => 'form-control input-lg')) }}
 
-            <!-- Edit post body -->
+            <!-- Edit post description -->
             {{ Form::label('description', 'Description:', array('class' => 'form-spacing-top')) }}
             {{ Form::textarea('description', null, array('class' => 'form-control')) }}
         </div>
@@ -37,20 +37,20 @@
         <div class="col-md-4">
             <div class="well">
 
-                <!-- Created at element -->
+                <!-- Created_at element -->
                 <dl class="dl-horizontal">
                     <label>Created at:</label>
                     <p>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</p>
                 </dl>
 
-                <!-- Updated at element -->
+                <!-- Updated_at element -->
                 <dl class="dl-horizontal">
                     <label>Updated at:</label>
                     <p>{{ date('M j, Y h:ia', strtotime($post->updated_at)) }}</p>
                 </dl>
                 <hr>
 
-                <!-- Delete and Edit buttons -->
+                <!-- Cancel and Save buttons -->
                 <div class="row">
 
                     <!-- Cancel button -->

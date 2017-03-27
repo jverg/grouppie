@@ -1,5 +1,5 @@
 
-<!-- Show user's page with edit -->
+<!-- Show user's page -->
 
 @extends('main')
 
@@ -48,10 +48,10 @@
                                 {{-- User's address --}}
                                 <h5><i style="color:#ce295a" class="{{ $user->address ? "fa fa-map-marker fa-2x" : "" }}"></i> {{ $user->address }}</h5>
 
-                               {{-- User\s address --}}
+                               {{-- User's email --}}
                                <h5><i style="color:#e0c633" class="{{ $user->email ? "fa fa-envelope fa-2x" : "" }}"></i>   {{ $user->email }}</h5>
 
-                                {{-- User's birthday date--}}
+                                {{-- User's birthday --}}
                                 <h5><i style="color:#3B5998" class="{{ $user->birthday ? "fa fa-gift fa-2x" : "" }}"></i> {{ $user->birthday }}</h5>
                             </p>
                         </div>
