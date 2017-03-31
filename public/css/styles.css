@@ -27,10 +27,6 @@
     margin-top: 10px;
 }
 
-.navbar-brand {
-    margin-top: 4%;
-}
-
 .dropdown {
     margin-top: 4%;
 }
@@ -137,4 +133,8 @@
     -moz-box-shadow: 0 0 8px #27F55B;
     -webkit-box-shadow: 0 0 8px #27F55B;
     box-shadow: 0 0 8px #27F55B;
+}
+
+.content{
+    margin-top: 70px;
 }

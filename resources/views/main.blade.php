@@ -13,7 +13,7 @@
     @include('partials._nav')
 
     <!-- Main container -->
-    <div class="container">
+    <div class="container content">
 
         <!-- Show success and error messages -->
         @include('partials._messages')
