@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller {
 
     /**
+     * PostController constructor.
+     *
+     * In order to only authenticate user access this.
+     */
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
+    /**
      * Home page of grouppie.
      *
      * @return mixed
