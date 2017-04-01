@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Head element -->
-<head>
-    @include('partials._head')
-</head>
+    <!-- Head element -->
+    <head>
+        @include('partials._head')
+    </head>
 
-<!-- Body element -->
-<body>
+    <!-- Body element -->
+    <body>
 
-    <!-- Navigation -->
-    @include('partials._nav')
+        <!-- Navigation -->
+        @include('partials._nav')
 
-    <!-- Main container -->
-    <div class="container content">
+        <!-- Main container -->
+        <div class="container content">
 
-        <!-- Show success and error messages -->
-        @include('partials._messages')
+            <!-- Show success and error messages -->
+            @include('partials._messages')
 
-        <!-- Main content -->
-        @yield('content')
+            <!-- Main content -->
+            @yield('content')
 
-        <!-- Footer -->
-        @include('partials._footer')
+            <!-- Footer -->
+            @include('partials._footer')
 
-    </div>
+        </div>
 
-    <!-- Javascript libraries -->
-    @include('partials._javascript')
+        <!-- Javascript libraries -->
+        @include('partials._javascript')
 
-</body>
+    </body>
 
 </html>
