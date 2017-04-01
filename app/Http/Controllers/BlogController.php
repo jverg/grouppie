@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller {
 
     /**
-     * PostController constructor.
+     * BlogController constructor.
      *
      * In order to only authenticate user access this.
      */
