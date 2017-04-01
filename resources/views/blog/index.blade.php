@@ -71,7 +71,7 @@
         </div>
 
         {{-- Main element with the posts --}}
-        <div class="col-md-9 col-md-offset-4" style="text-align: center">
+        <div class="col-md-6 col-md-offset-3" style="text-align: center">
             @foreach($posts as $post)
                 <h2>{{ $post->title }}</h2>
                 <!-- Link to author's profile -->
@@ -80,13 +80,15 @@
                         {{ \App\User::find($post->user_id)->name }}
                    </a> {{--{{ ' - ' . date('M j, Y', strtotime($post->created_at)) }}--}}
                 </h4>
+                <br>
                 {{-- Image of each post --}}
                 @if ($post->img_url)
-                    <img src="{{ $post->img_url }}" width="40%" height="40%">
+                    <img src="{{ $post->img_url }}" width="50%" height="60%">
                 @elseif($post->image)
-                    <img src="{{ asset('post_images/' . $post->image) }}" width="40%" height="40%">
+                    <img src="{{ asset('post_images/' . $post->image) }}" width="50%" height="60%">
                 @endif
-            <!-- Main content of the post -->
+                <!-- Main content of the post -->
+                <br><br>
                 <p>{{ strip_tags($post->description) }}</p><br>
                 <!-- Comments -->
                 <h5>Comments:<small> {{ $post->comments()->count() }}</small></h5>

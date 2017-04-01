@@ -100,8 +100,6 @@ html *
 
 #expenses-create {
     background-color: lightsalmon;
-    width: 95%;
-    height: 600px;
     border: indianred;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #F21B1B;
@@ -111,8 +109,6 @@ html *
 
 #incomes-create {
     background-color: lightgreen;
-    width: 95%;
-    height: 600px;
     border: limegreen;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #27F55B;
@@ -122,7 +118,6 @@ html *
 
 #expenses-view {
     background-color: lightsalmon;
-    width: 85%;
     border: indianred;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #F21B1B;
@@ -132,7 +127,6 @@ html *
 
 #incomes-view {
     background-color: lightgreen;
-    width: 85%;
     border: limegreen;
     border-style: solid;
     -moz-box-shadow: 0 0 8px #27F55B;
