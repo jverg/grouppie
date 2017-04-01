@@ -1,3 +1,8 @@
+html *
+{
+    font-family: Comfortaa;
+}
+
 .btn-h1-spacing {
     margin-top: 18px;
 }
