@@ -185,4 +185,14 @@ html * {
 
 .mob-wallet {
     float: left !important;
+    margin-left: 15px;
+    color: #999 !important;
+}
+
+.mob-wallet>a>button {
+    color: #999;
+}
+
+.mob-toggle>button {
+    color: #999 !important;
 }

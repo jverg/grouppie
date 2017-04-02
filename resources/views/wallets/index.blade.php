@@ -1,4 +1,4 @@
-<!-- Show all the posts of each user -->
+<!-- Show all the transactions of each user -->
 
 @extends('main')
 
