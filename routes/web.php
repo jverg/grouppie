@@ -23,6 +23,9 @@ Route::group(['middleware' => ['web']], function () {
     // Wallet's routes.
     Route::resource('wallets', 'WalletController');
 
+    // Transactions page.
+    Route::get('/transactions', array('uses' => 'WalletController@transactions', 'as' => 'wallets.transactions'));
+
     // User's routes.
     Route::resource('user', 'UserController');
 

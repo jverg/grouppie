@@ -11,7 +11,7 @@
     <div class="row">
 
         <!-- Incomes sidebar -->
-        <div class="col-md-2">
+        <div class="col-md-2 hidden-md hidden-sm hidden-xs">
             <div class="row">
                 <div id="incomes-sidebar" class="well">
                     <dl class="dl-horizontal" style="text-align: center">
@@ -41,7 +41,7 @@
         </div>
 
         <!-- Expenses sidebar -->
-        <div class="col-md-offset-2">
+        <div class="col-md-offset-2 hidden-md hidden-sm hidden-xs">
             <div id="expenses-sidebar" class="well">
                 <dl class="dl-horizontal" style="text-align: center">
                     <label><i class="fa fa-frown-o fa-3x"></i></label>

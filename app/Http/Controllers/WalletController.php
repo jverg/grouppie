@@ -154,4 +154,20 @@ class WalletController extends Controller {
         Session::flash('success', 'The transaction was successfully deleted!');
         return redirect()->route('wallets.index');
     }
+
+    public function transactions() {
+        // Brings the user's id.
+        $user = Auth::id();
+
+        // Brings the current user's expenses.
+        $expenses = Wallet::where('borrower', $user)->orderBy('id', 'desc')->paginate(4);
+
+        // Brings the current user's incomes.
+        $incomes = Wallet::where('lender', $user)->orderBy('id', 'desc')->paginate(4);
+
+        // Return a view and pass in the above variables.
+        return view('wallets.transactions')
+            ->withExpenses($expenses)
+            ->withIncomes($incomes);
+    }
 }

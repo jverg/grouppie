@@ -10,12 +10,12 @@
                 <div class="mob-toggle">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only"></span>
                         <i class="fa fa-bars"></i>
                     </button>
                 </div>
                 <div class="mob-wallet">
-                    <a href="/wallets">
+                    <a href="/transactions">
                     <button type="button" class="navbar-toggle">
                         <i class="fa fa-money"></i>
                     </button></a>
