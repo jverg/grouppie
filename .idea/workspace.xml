@@ -4,9 +4,7 @@
     <list default="true" id="16e9352d-1020-4cce-a292-7c8d8b08f699" name="Default" comment="">
       <change type="MODIFICATION" beforePath="Z:/.idea/workspace.xml" afterPath="Z:/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="Z:/README.md" afterPath="Z:/README.md" />
-      <change type="MODIFICATION" beforePath="Z:/public/css/styles.css" afterPath="Z:/public/css/styles.css" />
-      <change type="MODIFICATION" beforePath="Z:/resources/views/blog/index.blade.php" afterPath="Z:/resources/views/blog/index.blade.php" />
-      <change type="MODIFICATION" beforePath="Z:/resources/views/posts/index.blade.php" afterPath="Z:/resources/views/posts/index.blade.php" />
+      <change type="MODIFICATION" beforePath="Z:/resources/views/partials/_nav.blade.php" afterPath="Z:/resources/views/partials/_nav.blade.php" />
     </list>
     <ignored path=".iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,21 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://Z:/resources/views/blog/index.blade.php">
+      <file leaf-file-name="_nav.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://Z:/resources/views/partials/_nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
-        <entry file="file://Z:/public/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+            <state relative-caret-position="136">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -101,11 +89,11 @@
         <option value="Z:/public/scss/styles.scss" />
         <option value="Z:/resources/views/wallets/create.blade.php" />
         <option value="Z:/resources/views/wallets/index.blade.php" />
-        <option value="Z:/resources/views/partials/_nav.blade.php" />
         <option value="Z:/resources/views/partials/_footer.blade.php" />
         <option value="Z:/resources/views/posts/index.blade.php" />
         <option value="Z:/resources/views/blog/index.blade.php" />
         <option value="Z:/public/css/styles.css" />
+        <option value="Z:/resources/views/partials/_nav.blade.php" />
       </list>
     </option>
   </component>
@@ -203,29 +191,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="posts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Z" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Z:" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
+              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -364,12 +330,12 @@
       <workItem from="1490644365857" duration="3911000" />
       <workItem from="1490978563771" duration="5574000" />
       <workItem from="1491045302120" duration="5961000" />
-      <workItem from="1491083452386" duration="16217000" />
+      <workItem from="1491083452386" duration="16943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164516000" />
+    <option name="totallyTimeSpent" value="165242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
@@ -728,27 +694,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://Z:/resources/views/partials/_nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#1;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://Z:/resources/views/wallets/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#285#311#0#HTML" expanded="true" />
+            <element signature="e#285#311#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -769,18 +720,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://Z:/public/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://Z:/resources/views/blog/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="272">
           <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://Z:/public/css/styles.css">
+    <entry file="file://Z:/resources/views/partials/_nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding />
         </state>
       </provider>

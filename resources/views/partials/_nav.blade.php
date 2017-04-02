@@ -5,8 +5,8 @@
         <a class="navbar-brand" href="/">Grouppie</a>
 
         <!-- Check if the user is logged in or not -->
-    @if(Auth::check())
-        <!-- Brand and toggle get grouped for better mobile display -->
+        @if(Auth::check())
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
