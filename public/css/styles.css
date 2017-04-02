@@ -1,5 +1,4 @@
-html *
-{
+html * {
     font-family: Comfortaa;
 }
 
@@ -32,10 +31,6 @@ html *
     margin-top: 10px;
 }
 
-.dropdown {
-    margin-top: 4%;
-}
-
 .btn-primary {
     background-color: #222;
     border-color: #080808;
@@ -59,19 +54,32 @@ html *
 .dropdown-menu {
     background-color: #222;
     border-color: #080808;
+    padding: 0px;
 }
 
-.dropdown-menu>li>a {
+.dropdown-menu>table>tbody>tr>td>a {
     color: #999;
+    display:block;
+    text-decoration: none;
 }
 
-.dropdown-menu:hover {
-     color: #fff;
-     background-color: #000;
+.dropdown-menu>table {
+    margin-bottom: 0px;
 }
 
-.dropdown-menu>.divider {
-      background-color: #999;
+.dropdown-menu>table>tbody>tr:nth-child(4) {
+    border-top: solid; !important;
+    border-color: #999;
+    border-width: 1.2px;
+}
+
+.dropdown-menu>table>tbody>tr>td {
+    border: none;
+}
+
+.dropdown-menu>table>tbody>tr:hover {
+    color: #fff;
+    background-color: #000;
 }
 
 #expenses-sidebar {

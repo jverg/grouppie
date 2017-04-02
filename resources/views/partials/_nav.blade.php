@@ -36,22 +36,52 @@
                     <li class="{{ Request::is('/') ? "" : "active" }}">
                         <span>{{ \Illuminate\Support\Facades\Auth::user()->name }} </span><span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/user"> <i class="fa fa-user"></i> My profile</a></li>
-                            @if(\App\Wallet::wholeCash() >= 0)
-                                <li><a href="/wallets"><i class="fa fa-money"></i> My wallet <span
-                                                style="color: lawngreen">({{ \App\Wallet::wholeCash() }}€)</span></a>
-                                </li>
-                            @else
-                                <li><a href="/wallets"><i class="fa fa-money"></i> My wallet <span
-                                                style="color: orangered">({{ \App\Wallet::wholeCash() }}€)</span></a>
-                                </li>
-                            @endif
-                            <li><a href="/posts"><i class="fa fa-calendar"></i> My posts
-                                    ({{ Auth::user()->posts->count() }})</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                        </ul>
+                        <div class="dropdown-menu">
+                            <table class="table">
+
+                                <!-- Body of the table -->
+                                <tbody>
+
+                                {{-- User --}}
+                                <tr>
+                                    <td style="text-align: center">
+                                        <a href="/user">
+                                            <i class="fa fa-user"></i>
+                                        </a>
+                                    </td>
+                                    <td><a href="/user">My profile</a></td>
+                                </tr>
+
+                                {{-- My wallet --}}
+                                <tr>
+                                    <td style="text-align: center"><a href="/wallets"><i class="fa fa-money"></i></a></td>
+                                    <td>
+                                        @if(\App\Wallet::wholeCash() >= 0)
+                                            <a href="/wallets">
+                                                Wallet <span style="color: lawngreen">({{ \App\Wallet::wholeCash() }}€)</span>
+                                            </a>
+                                        @else
+                                            <a href="/wallets">
+                                                Wallet <span style="color: orangered">({{ \App\Wallet::wholeCash() }}€)</span>
+                                            </a>
+                                        @endif
+                                    </td>
+                                </tr>
+
+                                {{-- My posts --}}
+                                <tr>
+                                    <td style="text-align: center"><a href="/posts"><i class="fa fa-calendar"></i></a></td>
+                                    <td><a href="/posts">My posts ({{ Auth::user()->posts->count() }})</a></td>
+                                </tr>
+
+                                {{-- Logout --}}
+                                <tr>
+                                    <td style="text-align: center"><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i></a></td>
+                                    <td><a href="{{ URL::to('auth/logout') }}">Logout</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </li>
                 </ul>
             </div>
