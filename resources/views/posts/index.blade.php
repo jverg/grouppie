@@ -16,7 +16,7 @@
 
     <!-- Create new post buttons -->
     <div class="col-md-2">
-        <a href="{{ route('posts.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Create your new post</a>
+        <a href="{{ route('posts.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Create your own post</a>
         <a href="{{ route('crawler.create') }}" class="btn btn-block btn-primary btn-h1-spacing">Post a site</a>
     </div>
 </div>

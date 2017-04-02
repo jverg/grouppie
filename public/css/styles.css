@@ -2,8 +2,13 @@ html * {
     font-family: Comfortaa;
 }
 
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
 .btn-h1-spacing {
     margin-top: 18px;
+    font-size: x-small;
 }
 
 .form-spacing-top {
@@ -94,6 +99,14 @@ html * {
      box-shadow: 0 0 8px #F21B1B;
 }
 
+#expenses-sidebar>.dl-horizontal>table>thead>tr>th {
+    text-align: center;
+}
+
+#expenses-sidebar>.dl-horizontal>table {
+    table-layout: fixed;
+}
+
 #expenses-sidebar>.dl-horizontal>table>tbody>tr>td  {
     border: none;
 }
@@ -108,6 +121,14 @@ html * {
     -moz-box-shadow: 0 0 8px #27F55B;
     -webkit-box-shadow: 0 0 8px #27F55B;
     box-shadow: 0 0 8px #27F55B;
+}
+
+#incomes-sidebar>.dl-horizontal>table>thead>tr>th {
+    text-align: center;
+}
+
+#incomes-sidebar>.dl-horizontal>table {
+    table-layout: fixed;
 }
 
 #incomes-sidebar>.dl-horizontal>table>tbody>tr>td  {

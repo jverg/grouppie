@@ -21,16 +21,16 @@
                         <table class="table">
                             <!-- Headers of the table -->
                             <thead>
-                            <th style="text-align: center">From</th>
-                            <th style="text-align: center">Amount</th>
+                            <th>From</th>
+                            <th>Amount</th>
                             </thead>
 
                             <!-- Body of the table -->
                             <tbody>
                             @foreach($incomes as $income)
                                 <tr>
-                                    <td style="text-align: center">{{ \App\User::find($income->borrower)->name }}</td>
-                                    <td style="text-align: center">{{ $income->amount }} €</td>
+                                    <td>{{ \App\User::find($income->borrower)->name }}</td>
+                                    <td>{{ $income->amount }} €</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -52,16 +52,16 @@
 
                         <!-- Headers of the table -->
                         <thead>
-                        <th style="text-align: center">To</th>
-                        <th style="text-align: center">Amount</th>
+                        <th>To</th>
+                        <th>Amount</th>
                         </thead>
 
                         <!-- Body of the table -->
                         <tbody>
                         @foreach($expenses as $expense)
                             <tr>
-                                <td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>
-                                <td style="text-align: center">{{ $expense->amount }} €</td>
+                                <td>{{ \App\User::find($expense->lender)->name }}</td>
+                                <td>{{ $expense->amount }} €</td>
                             </tr>
                         @endforeach
                         </tbody>
