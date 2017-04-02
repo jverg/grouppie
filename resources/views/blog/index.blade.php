@@ -15,9 +15,8 @@
             <div class="row">
                 <div id="incomes-sidebar" class="well">
                     <dl class="dl-horizontal" style="text-align: center">
-                        <label><i class="fa fa-smile-o fa-2x"></i></label>
-                        <hr>
-
+                        <label><i class="fa fa-smile-o fa-3x"></i></label>
+                        <br><br>
                         <!-- Table with all incomes -->
                         <table class="table">
                             <!-- Headers of the table -->
@@ -45,8 +44,9 @@
         <div class="col-md-offset-2">
             <div id="expenses-sidebar" class="well">
                 <dl class="dl-horizontal" style="text-align: center">
-                    <label><i class="fa fa-frown-o fa-2x"></i></label>
-                    <hr>
+                    <label><i class="fa fa-frown-o fa-3x"></i></label>
+                    <br><br>
+
                     <!-- Table with all expenses -->
                     <table class="table">
 

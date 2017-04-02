@@ -92,7 +92,11 @@ html * {
      -moz-box-shadow: 0 0 8px #F21B1B;
      -webkit-box-shadow: 0 0 8px #F21B1B;
      box-shadow: 0 0 8px #F21B1B;
- }
+}
+
+#expenses-sidebar>.dl-horizontal>table>tbody>tr>td  {
+    border: none;
+}
 
 #incomes-sidebar {
     background-color: lightgreen;
@@ -104,6 +108,10 @@ html * {
     -moz-box-shadow: 0 0 8px #27F55B;
     -webkit-box-shadow: 0 0 8px #27F55B;
     box-shadow: 0 0 8px #27F55B;
+}
+
+#incomes-sidebar>.dl-horizontal>table>tbody>tr>td  {
+    border: none;
 }
 
 #expenses-create {
@@ -144,4 +152,12 @@ html * {
 
 .content{
     margin-top: 70px;
+}
+
+.pagination>.active>span {
+    background-color: #222;
+}
+
+.pagination>.active>span:hover {
+    background-color: #000000;
 }
