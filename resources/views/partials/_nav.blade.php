@@ -2,7 +2,6 @@
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="/">Grouppie</a>
 
         <!-- Check if the user is logged in or not -->
         @if(Auth::check())
@@ -15,6 +14,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <div class="mob-wallet">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <a class="navbar-brand" href="/">Grouppie</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,6 +95,7 @@
                 </ul>
             </div>
         @else
+                <a class="navbar-brand" href="/">Grouppie</a>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     {{-- Login icon --}}
