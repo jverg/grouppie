@@ -4,95 +4,96 @@
     <div class="container">
 
         <!-- Check if the user is logged in or not -->
-        @if(Auth::check())
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <div class="mob-toggle">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+    @if(Auth::check())
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <div class="mob-toggle">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </div>
-                <div class="mob-wallet">
-                    <a href="/transactions">
+                    <span class="sr-only"></span>
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="mob-wallet">
+                <a href="/transactions">
                     <button type="button" class="navbar-toggle">
                         <i class="fa fa-money"></i>
-                    </button></a>
-                </div>
-                <a class="navbar-brand" href="/">Grouppie</a>
+                    </button>
+                </a>
             </div>
+            <a class="navbar-brand" href="/">Grouppie</a>
+        </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <!-- Menu buttons -->
-                    <li class="{{ Request::is('/') ? "active" : "" }}">
-                        <a href='/'>
-                            <i class="fa fa-home fa-lg"></i>
-                        </a>
-                    </li>
-                </ul>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!-- Menu buttons -->
+                <li class="{{ Request::is('/') ? "active" : "" }}">
+                    <a href='/'>
+                        <i class="fa fa-home fa-lg"></i>
+                    </a>
+                </li>
+            </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- User's dropdown menu -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">
-                    <li class="{{ Request::is('/') ? "" : "active" }}">
-                        <span>{{ \Illuminate\Support\Facades\Auth::user()->name }} </span><span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <table class="table">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- User's dropdown menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                       <li class="{{ Request::is('/') ? "" : "active" }}">
+                       <span>{{ \Illuminate\Support\Facades\Auth::user()->name }} </span><span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <table class="table">
 
-                                <!-- Body of the table -->
-                                <tbody>
+                            <!-- Body of the table -->
+                            <tbody>
 
-                                {{-- User --}}
-                                <tr>
-                                    <td style="text-align: center">
-                                        <a href="/user">
-                                            <i class="fa fa-user"></i>
+                            {{-- User --}}
+                            <tr>
+                                <td style="text-align: center">
+                                    <a href="/user">
+                                        <i class="fa fa-user"></i>
+                                    </a>
+                                </td>
+                                <td><a href="/user">My profile</a></td>
+                            </tr>
+
+                            {{-- My wallet --}}
+                            <tr>
+                                <td style="text-align: center"><a href="/wallets"><i class="fa fa-money"></i></a></td>
+                                <td>
+                                    @if(\App\Wallet::wholeCash() >= 0)
+                                        <a href="/wallets">
+                                            Wallet <span style="color: lawngreen">({{ \App\Wallet::wholeCash() }}€)</span>
                                         </a>
-                                    </td>
-                                    <td><a href="/user">My profile</a></td>
-                                </tr>
+                                    @else
+                                        <a href="/wallets">
+                                            Wallet <span style="color: orangered">({{ \App\Wallet::wholeCash() }}€)</span>
+                                        </a>
+                                    @endif
+                                </td>
+                            </tr>
 
-                                {{-- My wallet --}}
-                                <tr>
-                                    <td style="text-align: center"><a href="/wallets"><i class="fa fa-money"></i></a></td>
-                                    <td>
-                                        @if(\App\Wallet::wholeCash() >= 0)
-                                            <a href="/wallets">
-                                                Wallet <span style="color: lawngreen">({{ \App\Wallet::wholeCash() }}€)</span>
-                                            </a>
-                                        @else
-                                            <a href="/wallets">
-                                                Wallet <span style="color: orangered">({{ \App\Wallet::wholeCash() }}€)</span>
-                                            </a>
-                                        @endif
-                                    </td>
-                                </tr>
+                            {{-- My posts --}}
+                            <tr>
+                                <td style="text-align: center"><a href="/posts"><i class="fa fa-calendar"></i></a></td>
+                                <td><a href="/posts">My posts ({{ Auth::user()->posts->count() }})</a></td>
+                            </tr>
 
-                                {{-- My posts --}}
-                                <tr>
-                                    <td style="text-align: center"><a href="/posts"><i class="fa fa-calendar"></i></a></td>
-                                    <td><a href="/posts">My posts ({{ Auth::user()->posts->count() }})</a></td>
-                                </tr>
-
-                                {{-- Logout --}}
-                                <tr>
-                                    <td style="text-align: center"><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i></a></td>
-                                    <td><a href="{{ URL::to('auth/logout') }}">Logout</a></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                            {{-- Logout --}}
+                            <tr>
+                                <td style="text-align: center"><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i></a></td>
+                                <td><a href="{{ URL::to('auth/logout') }}">Logout</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
         @else
-                <a class="navbar-brand" href="/">Grouppie</a>
+        <a class="navbar-brand" href="/">Grouppie</a>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     {{-- Login icon --}}

@@ -12,7 +12,8 @@
             <!-- Income element -->
             <dl class="dl-horizontal" style="text-align: center">
                 <label><i class="fa fa-smile-o fa-2x"></i></label>
-                <hr>
+                <br><br>
+
                 <!-- Table with all expenses -->
                 <table class="table">
 
@@ -44,7 +45,8 @@
             <!-- Income element -->
             <dl class="dl-horizontal" style="text-align: center">
                 <label><i class="fa fa-frown-o fa-2x"></i></label>
-                <hr>
+                <br><br>
+
                 <!-- Table with all expenses -->
                 <table class="table">
 
