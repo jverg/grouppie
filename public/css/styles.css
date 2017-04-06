@@ -19,10 +19,6 @@ html * {
     margin-top: 5px !important;
 }
 
-.navbar-inverse .navbar-brand {
-    color: #ffffff !important;
-}
-
 .btn-h1-spacing {
     margin-top: 18px;
     font-size: x-small;
