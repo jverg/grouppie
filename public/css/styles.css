@@ -209,3 +209,7 @@ html * {
 .mob-toggle>button {
     color: #999 !important;
 }
+
+.navbar-header {
+    font-size: 12px !important;
+}
