@@ -24,7 +24,7 @@ class BlogController extends Controller {
     }
 
     /**
-     * Home page of grouppie.
+     * Home page of grouplend.
      *
      * @return mixed
      */

@@ -21,7 +21,7 @@
                     </button>
                 </a>
             </div>
-            <a class="navbar-brand" href="/">Grouppie</a>
+            <a class="navbar-brand" href="/">Grouplend</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -93,7 +93,7 @@
             </ul>
         </div>
         @else
-        <a class="navbar-brand" href="/">Grouppie</a>
+        <a class="navbar-brand" href="/">Grouplend</a>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     {{-- Login icon --}}

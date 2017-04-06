@@ -3,7 +3,7 @@
 
 @extends('main')
 
-@section('title', "| Groupie" )
+@section('title', "| Grouplend" )
 
 @section('content')
 
