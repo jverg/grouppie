@@ -6,6 +6,10 @@
 
 @section('content')
 
+    {{-- Libraries for autocomplete --}}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+
     <!-- Incomes sidebar -->
     <div class="col-md-6">
         <div id="incomes-view" class="well">
@@ -67,7 +71,7 @@
 
                                             <!-- User -->
                                             {{ Form::label('borrower', 'Borrower:') }}
-                                            {{ Form::text('borrower', null, array('class' => 'form-control')) }}
+                                            {{ Form::text('borrower', null, array('class' => 'typeahead form-control')) }}
 
                                             <!-- Description -->
                                             {{ Form::label('income_description', "Income description:", array('class' => 'form-spacing-top')) }}
@@ -148,7 +152,7 @@
                                             {{ Form::text('expense_amount', null, array('class' => 'form-control')) }}
                                             <!-- User -->
                                             {{ Form::label('lender', 'Lender:') }}
-                                            {{ Form::text('lender', null, array('class' => 'form-control')) }}
+                                            {{ Form::text('lender', null, array('class' => 'typeahead form-control')) }}
                                             <!-- Description -->
                                             {{ Form::label('expense_description', "Expense description:", array('class' => 'form-spacing-top')) }}
                                             {{ Form::textarea('expense_description', null, array('class' => 'form-control')) }}
@@ -166,4 +170,16 @@
             </dl>
         </div>
     </div>
+
+    {{-- Script for autocomplete --}}
+    <script type="text/javascript">
+        var path = "{{ route('autocomplete') }}";
+        $('input.typeahead').typeahead({
+            source:  function (query, process) {
+                return $.get(path, { query: query }, function (data) {
+                    return process(data);
+                });
+            }
+        });
+    </script>
 @endsection

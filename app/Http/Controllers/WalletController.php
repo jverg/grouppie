@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Wallet;
 use Session;
 use Illuminate\Http\Request;
@@ -67,11 +68,13 @@ class WalletController extends Controller {
                 'expense_description' => 'required'
             ));
 
+            $lender = User::select('id')->where('name', 'LIKE', $request->lender);
+
             // Store the expense in the database
             $expense = new Wallet;
             $expense->amount = $request->expense_amount;
             $expense->description = $request->expense_description;
-            $expense->lender = $request->lender;
+            $expense->lender = $lender;
             $expense->borrower = Auth::user()->id;
             $expense->save();
 
@@ -88,11 +91,14 @@ class WalletController extends Controller {
                 'income_description' => 'required'
             ));
 
+            $borrower = User::select('id')->where('name', $request->borrower)->first();
+            $borrower = $borrower['id'];
+
             // Store in the database
             $income = new Wallet;
             $income->amount = $request->income_amount;
             $income->description = $request->income_description;
-            $income->borrower = $request->borrower;
+            $income->borrower = $borrower;
             $income->lender = Auth::user()->id;
             $income->save();
 
@@ -169,5 +175,15 @@ class WalletController extends Controller {
         return view('wallets.transactions')
             ->withExpenses($expenses)
             ->withIncomes($incomes);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function autocomplete(Request $request) {
+        $data = User::select('id', 'name')->where("id","LIKE","%{$request->input('query')}%")->get();
+        return response()->json($data);
     }
 }

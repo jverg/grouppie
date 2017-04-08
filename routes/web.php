@@ -39,6 +39,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('comments/{id}', array('uses' => 'CommentsController@destroy', 'as' => 'comments.destroy'));
     Route::get('comments/{id}/delete', array('uses' => 'CommentsController@delete', 'as' => 'comments.delete'));
 
+    Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'WalletController@autocomplete'));
 });
 
 // Logout.
