@@ -216,4 +216,5 @@ html * {
 
 .footer {
     position: relative;
+    clear:both;
 }
