@@ -52,7 +52,7 @@
 
                     <!-- Headers of the table -->
                     <thead>
-                        <th style="text-align: center">To</th>
+                        <th style="text-align: center; padding-left: 8%;">To</th>
                         <th style="text-align: center">Amount</th>
                     </thead>
 
