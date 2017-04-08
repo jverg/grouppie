@@ -32,6 +32,10 @@
                                     <td style="text-align: center">{{ $income->amount }} €</td>
                                 </tr>
                             @endforeach
+                        @else
+                            <tr>
+                                <td style="text-align: center"></td>
+                            </tr>
                         @endif
                     </tbody>
                 </table>
@@ -66,6 +70,9 @@
                             </tr>
                         @endforeach
                     @endif
+                    <tr>
+                        <td style="text-align: center"></td>
+                    </tr>
                     </tbody>
                 </table>
             </dl>

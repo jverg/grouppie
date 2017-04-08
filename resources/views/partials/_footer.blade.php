@@ -1,7 +1,7 @@
 
 <!-- Footer file -->
-<div id="footer">
+<footer class="footer">
     <hr>
 
     <p class="text-center">Copyright {{ date('Y') }} &copy; jverg - All rights reserved</p>
-</div>
+</footer>
