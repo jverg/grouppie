@@ -183,7 +183,7 @@ class WalletController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function autocomplete(Request $request) {
-        $data = User::select('id', 'name')->where("id","LIKE","%{$request->input('query')}%")->get();
+        $data = User::select('id', 'name')->where("name","LIKE","%{$request->input('query')}%")->get();
         return response()->json($data);
     }
 }
