@@ -68,7 +68,8 @@ class WalletController extends Controller {
                 'expense_description' => 'required'
             ));
 
-            $lender = User::select('id')->where('name', 'LIKE', $request->lender);
+            $lender = User::select('id')->where('name', $request->lender)->first();
+            $lender = $lender['id'];
 
             // Store the expense in the database
             $expense = new Wallet;
