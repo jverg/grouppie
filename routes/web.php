@@ -32,6 +32,9 @@ Route::group(['middleware' => ['web']], function () {
     // Post's routes.
     Route::resource('crawler', 'CrawlerController');
 
+    // Group's routes.
+    Route::resource('group', 'GroupController');
+
     // Routes for the comment elements.
     Route::post('comments/{post_id}', array('uses' => 'CommentsController@store', 'as' => 'comments.store'));
     Route::get('comments/{id}/edit', array('uses' => 'CommentsController@edit', 'as' => 'comments.edit'));
