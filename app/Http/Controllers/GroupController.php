@@ -52,7 +52,7 @@ class GroupController extends Controller
         Session::flash('success', 'Your group was successfully saved!');
 
         // Redirect to the page of the last created post.
-        return redirect()->route('/');
+        return redirect('/');
     }
 
     /**
