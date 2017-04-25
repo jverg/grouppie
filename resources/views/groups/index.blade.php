@@ -11,27 +11,26 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
-    <!-- Incomes sidebar -->
-    {{--<div class="col-md-6">--}}
-        <div class="well">
-            <!-- Income element -->
-            <dl class="dl-horizontal" style="text-align: center">
-                <label><i class="fa fa-users fa-2x"></i></label>
-                <hr>
-                <!-- Table with all expenses -->
-                <table class="table">
+    <!-- Users of the group -->
+    <div class="well">
+        <!-- Income element -->
+        <dl class="dl-horizontal" style="text-align: center">
+            <label><i class="fa fa-users fa-2x"></i></label>
+            <hr>
+            <!-- Table with all users of the group -->
+            <table class="table">
 
-                    <!-- Headers of the table -->
-                    <thead>
+                <!-- Headers of the table -->
+                <thead>
                     <th style="text-align: center">Username</th>
                     <th style="text-align: center">Actions</th>
-                    </thead>
+                </thead>
 
-                    <!-- Body of the table -->
-                    <tbody>
+                <!-- Body of the table -->
+                <tbody>
+                @if($users)
+                    @foreach($users as $user)
                     <tr>
-                        @if($users)
-                        @foreach($users as $user)
                         <td style="text-align: center">{{ $user->name }}</td>
                         <td>
                             {{ Form::open(array('method' => 'DELETE', 'route' => array('group.destroy', $user->id))) }}
@@ -39,9 +38,9 @@
                             {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
                             {{ Form::close() }}
                         </td>
-                        @endforeach
-                        @endif
                     </tr>
+                    @endforeach
+                @endif
                     <tr>
                         <td></td>
                         <td style="text-align: center">
@@ -60,24 +59,16 @@
                                             </div>
 
                                             <hr>
-                                            {{--<!-- Create new post form -->--}}
-                                        {{--{!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}--}}
+                                            <!-- Create new post form -->
+                                            {!! Form::open(array('route' => 'group.store', 'data-parsley-validate' => '')) !!}
 
-                                        {{--<!-- Amount -->--}}
-                                        {{--{{ Form::label('income_amount', 'Amount:') }}--}}
-                                        {{--{{ Form::text('income_amount', null, array('class' => 'form-control')) }}--}}
+                                            <!-- Amount -->
+                                            {{ Form::label('username', 'Username:') }}
+                                            {{ Form::text('username', null, array('class' => 'typeahead form-control')) }}
 
-                                        {{--<!-- User -->--}}
-                                        {{--{{ Form::label('borrower', 'Borrower:') }}--}}
-                                        {{--{{ Form::text('borrower', null, array('class' => 'typeahead form-control')) }}--}}
-
-                                        {{--<!-- Description -->--}}
-                                        {{--{{ Form::label('income_description', "Income description:", array('class' => 'form-spacing-top')) }}--}}
-                                        {{--{{ Form::textarea('income_description', null, array('class' => 'form-control')) }}--}}
-
-                                        {{--<!-- Submit button -->--}}
-                                            {{--{{ Form::Submit('Create income', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}--}}
-                                            {{--{!! Form::close() !!}--}}
+                                            <!-- Submit button -->
+                                            {{ Form::Submit('Add user', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px')) }}
+                                            {!! Form::close() !!}
                                         </dl>
                                     </div>
 
@@ -85,9 +76,20 @@
                             </div>
                         </td>
                     </tr>
-                    </tbody>
-                </table>
-            </dl>
-        </div>
-    {{--</div>--}}
+                </tbody>
+            </table>
+        </dl>
+    </div>
+
+    {{-- Script for autocomplete --}}
+    <script type="text/javascript">
+        var path = "{{ route('autocompletegroup') }}";
+        $('input.typeahead').typeahead({
+            source:  function (query, process) {
+                return $.get(path, { query: query }, function (data) {
+                    return process(data);
+                });
+            }
+        });
+    </script>
 @endsection

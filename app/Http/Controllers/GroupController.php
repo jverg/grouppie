@@ -71,23 +71,35 @@ class GroupController extends Controller {
      */
     public function store(Request $request) {
 
-        // Validate the group data.
-        $this->validate($request, array(
-            'name' => 'required|max:255',
-        ));
+        if ($request->username) {
+            $gid = Auth::user()->gid;
 
-        // Store the group in the database
-        $group = new Group;
-        $group->name = $request->name;
-        $group->admin = Auth::user()->id;
-        $group->save();
+            DB::table('users')
+                ->where('name', $request->username)
+                ->update(array('gid' => $gid));
 
-        DB::table('users')
-            ->where('id', Auth::user()->id)
-            ->update(array('gid' => $group->id));
+            // Success message just for one request.
+            Session::flash('success', 'The user added successfully!');
+        }
+        else {
+            // Validate the group data.
+            $this->validate($request, array(
+                'name' => 'required|max:255',
+            ));
 
-        // Success message just for one request.
-        Session::flash('success', 'Your group was successfully saved!');
+            // Store the group in the database
+            $group = new Group;
+            $group->name = $request->name;
+            $group->admin = Auth::user()->id;
+            $group->save();
+
+            DB::table('users')
+                ->where('id', Auth::user()->id)
+                ->update(array('gid' => $group->id));
+
+            // Success message just for one request.
+            Session::flash('success', 'Your group was successfully saved!');
+        }
 
         // Redirect to the page of the last created post.
         return redirect('/group');
@@ -161,5 +173,13 @@ class GroupController extends Controller {
             Session::flash('success', 'The group has been deleted because is out of users');
             return redirect()->route('group.create');
         }
+    }
+
+    /**
+     * Autocomplete for add user to group.
+     */
+    public function autocomplete(Request $request) {
+        $data = User::select('id', 'name', 'gid')->where("name","LIKE","%{$request->input('query')}%")->whereNull("gid")->get();
+        return response()->json($data);
     }
 }
