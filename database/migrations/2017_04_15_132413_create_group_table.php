@@ -21,6 +21,12 @@ class CreateGroupTable extends Migration
             $table->foreign('admin')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
+
+        // Create author's column.
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('gid')->unsigned()->nullable();
+            $table->foreign('gid')->references('id')->on('groups')->onDelete('cascade');
+        });
     }
 
     /**

@@ -36,4 +36,13 @@ class User extends Authenticatable
     public function posts() {
         return $this->hasMany('App\Post');
     }
+
+    /**
+     * One user must have a group.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function group() {
+        return $this->belongsTo('App\Group');
+    }
 }

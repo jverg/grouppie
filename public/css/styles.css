@@ -94,7 +94,7 @@ html * {
     margin-bottom: 0px;
 }
 
-.dropdown-menu>table>tbody>tr:nth-child(4) {
+.dropdown-menu>table>tbody>tr:nth-child(5) {
     border-top: solid; !important;
     border-color: #999;
     border-width: 1.2px;
