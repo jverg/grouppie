@@ -36,9 +36,12 @@ class GroupController extends Controller {
         if ($groupid) {
 
             $user = User::where('gid', $groupid)->orderBy('id', 'desc')->paginate(4);
+            $group = Group::find($groupid);
 
             // Return view with user's group.
-            return view('groups.index')->withUsers($user);
+            return view('groups.index')
+                ->withUsers($user)
+                ->withGroup($group);
         } else {
             // Return create new group form.
             return redirect('group/create');

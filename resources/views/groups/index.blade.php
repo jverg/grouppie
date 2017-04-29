@@ -15,6 +15,7 @@
     <div class="well">
         <!-- Income element -->
         <dl class="dl-horizontal" style="text-align: center">
+            <label>{{ $group->name }}</label><br>
             <label><i class="fa fa-users fa-2x"></i></label>
             <hr>
             <!-- Table with all users of the group -->
@@ -31,7 +32,11 @@
                 @if($users)
                     @foreach($users as $user)
                     <tr>
+                        @if($user->id  ==  $group->admin)
+                            <td style="text-align: center">{{ $user->name }} (admin)</td>
+                        @else
                         <td style="text-align: center">{{ $user->name }}</td>
+                        @endif
                         <td>
                             {{ Form::open(array('method' => 'DELETE', 'route' => array('group.destroy', $user->id))) }}
                             {{ Form::hidden('id', $user->id) }}
