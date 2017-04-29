@@ -94,15 +94,13 @@
 
     {{-- Script for autocomplete --}}
     <script type="text/javascript">
-        $( document ).ready(function() {
-            var path = "{{ route('autocompletegroup') }}";
-            $('input.typeahead').typeahead({
-                source: function (query, process) {
-                    return $.get(path, {query: query}, function (data) {
-                        return process(data);
-                    });
-                }
-            });
-        })
+        var path = "{{ route('autocompletegroup') }}";
+        $('input.typeahead').typeahead({
+            source: function (query, process) {
+                return $.get(path, {query: query}, function (data) {
+                    return process(data);
+                });
+            }
+        });
     </script>
 @endsection
