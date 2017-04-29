@@ -24,7 +24,9 @@
                 <!-- Headers of the table -->
                 <thead>
                     <th style="text-align: center">Username</th>
+                    @if(Auth::user()->id == $group->admin)
                     <th style="text-align: center">Actions</th>
+                    @endif
                 </thead>
 
                 <!-- Body of the table -->
@@ -37,15 +39,18 @@
                         @else
                         <td style="text-align: center">{{ $user->name }}</td>
                         @endif
-                        <td>
-                            {{ Form::open(array('method' => 'DELETE', 'route' => array('group.destroy', $user->id))) }}
-                            {{ Form::hidden('id', $user->id) }}
-                            {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
-                            {{ Form::close() }}
-                        </td>
+                        @if(Auth::user()->id == $group->admin)
+                            <td>
+                                {{ Form::open(array('method' => 'DELETE', 'route' => array('group.destroy', $user->id))) }}
+                                {{ Form::hidden('id', $user->id) }}
+                                {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
+                                {{ Form::close() }}
+                            </td>
+                        @endif
                     </tr>
                     @endforeach
                 @endif
+                @if(Auth::user()->id == $group->admin)
                     <tr>
                         <td></td>
                         <td style="text-align: center">
@@ -81,6 +86,7 @@
                             </div>
                         </td>
                     </tr>
+                @endif
                 </tbody>
             </table>
         </dl>

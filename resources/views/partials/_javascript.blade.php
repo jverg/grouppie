@@ -9,3 +9,25 @@
 
 <!-- Font-awesome icons -->
 <script src="https://use.fontawesome.com/567b9227ce.js"></script>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+    $(document).scroll(function() {
+        checkOffset();
+    });
+
+    function checkOffset() {
+        // expenses sidebar
+        if ($('#expenses-sidebar').offset().top + $('#expenses-sidebar').height()
+                >= $('.footer').offset().top - 400)
+            $('#expenses-sidebar').css('max-height', '78%');
+        if ($(document).scrollTop() + window.innerHeight < $('.footer').offset().top)
+            $('#expenses-sidebar').css('max-height', '100%'); // restore when you scroll up
+        // incomes sidebar
+        if ($('#incomes-sidebar').offset().top + $('#incomes-sidebar').height()
+                >= $('.footer').offset().top - 400)
+            $('#incomes-sidebar').css('max-height', '78%');
+        if ($(document).scrollTop() + window.innerHeight < $('.footer').offset().top)
+            $('#incomes-sidebar').css('max-height', '100%');
+    }});
+</script>
