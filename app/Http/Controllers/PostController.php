@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Group;
 use App\Post;
 use App\User;
 use Image;
@@ -73,6 +74,8 @@ class PostController extends Controller {
         $post->title = $request->title;
         $post->description = $request->description;
         $post->user_id = Auth::user()->id;
+        $post->group_id = Auth::user()->group_id;
+
         // Save post's image.
         if($request->hasFile('post_images')) {
             $image = $request->file('post_images');

@@ -31,11 +31,11 @@ class GroupController extends Controller {
     public function index() {
 
         // Check if the user exist in aa group.
-        $groupid = Auth::user()->gid;
+        $groupid = Auth::user()->group_id;
 
         if ($groupid) {
 
-            $user = User::where('gid', $groupid)->orderBy('id', 'desc')->paginate(4);
+            $user = User::where('group_id', $groupid)->orderBy('id', 'desc')->paginate(4);
             $group = Group::find($groupid);
 
             // Return view with user's group.
@@ -56,7 +56,7 @@ class GroupController extends Controller {
     public function create() {
 
         // Check if the user exist in aa group.
-        $hasgroup = Auth::user()->gid;
+        $hasgroup = Auth::user()->group_id;
         if ($hasgroup) {
             // Go to user's group.
             return redirect('group');
@@ -75,11 +75,11 @@ class GroupController extends Controller {
     public function store(Request $request) {
 
         if ($request->username) {
-            $gid = Auth::user()->gid;
+            $gid = Auth::user()->group_id;
 
             DB::table('users')
                 ->where('name', $request->username)
-                ->update(array('gid' => $gid));
+                ->update(array('group_id' => $gid));
 
             // Success message just for one request.
             Session::flash('success', 'The user added successfully!');
@@ -98,7 +98,7 @@ class GroupController extends Controller {
 
             DB::table('users')
                 ->where('id', Auth::user()->id)
-                ->update(array('gid' => $group->id));
+                ->update(array('group_id' => $group->id));
 
             // Success message just for one request.
             Session::flash('success', 'Your group was successfully saved!');
@@ -151,13 +151,13 @@ class GroupController extends Controller {
 
         $groupid = $user->gid;
 
-        $group_users = User::where('gid', $groupid)->count();
+        $group_users = User::where('group_id', $groupid)->count();
 
         if ($group_users > 1) {
             // Find the user to delete.
             DB::table('users')
                 ->where('id', $id)
-                ->update(array('gid' => null));
+                ->update(array('group_id' => null));
 
             // Message when deletion took place.
             Session::flash('success', 'The user was successfully deleted from the group');
@@ -166,7 +166,7 @@ class GroupController extends Controller {
             // Find the user to delete.
             DB::table('users')
                 ->where('id', $id)
-                ->update(array('gid' => null));
+                ->update(array('group_id' => null));
 
             DB::table('groups')
                 ->where('id', $groupid)
@@ -182,7 +182,7 @@ class GroupController extends Controller {
      * Autocomplete for add user to group.
      */
     public function autocomplete(Request $request) {
-        $data = User::select('id', 'name', 'gid')->where("name","LIKE","%{$request->input('query')}%")->whereNull("gid")->get();
+        $data = User::select('id', 'name', 'group_id')->where("name","LIKE","%{$request->input('query')}%")->whereNull("group_id")->get();
         return response()->json($data);
     }
 }

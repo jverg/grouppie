@@ -48,6 +48,7 @@ class CrawlerController extends Controller
         $crawler = new Post;
         $crawler->title = $title;
         $crawler->description = $description;
+        $crawler->group_id = Auth::user()->group_id;
         $crawler->img_url = $image;
         $crawler->url = $url;
         $crawler->user_id = Auth::user()->id;

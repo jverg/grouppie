@@ -16,4 +16,13 @@ class Post extends Model {
     {
         return $this->hasMany('App\Comment');
     }
+
+    /**
+     * One post must have a group.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function group() {
+        return $this->belongsTo('App\Group');
+    }
 }
