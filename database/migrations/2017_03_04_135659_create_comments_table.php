@@ -19,12 +19,8 @@ class CreateCommentsTable extends Migration {
             $table->text('comment');
             $table->boolean('approved');
             $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
-        });
-
-        // Reference each comment with a post's id.
-        Schema::table('comments', function ($table) {
-           $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
