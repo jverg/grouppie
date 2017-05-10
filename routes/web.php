@@ -14,11 +14,7 @@
 Route::group(['middleware' => ['web']], function () {
 
     // Post's URLs with slugs.
-    Route::get('blog/{id}', array('uses' => 'BlogController@getSingle', 'as' => 'blog.single'))->where('id', '[0-9]+');
     Route::get('/', array('uses' => 'BlogController@getIndex', 'as' => 'blog.index'));
-
-    // Post's routes.
-    Route::resource('posts', 'PostController');
 
     // Wallet's routes.
     Route::resource('wallets', 'WalletController');
@@ -44,6 +40,13 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'WalletController@autocomplete'));
     Route::get('autocompletegroup',array('as'=>'autocompletegroup','uses'=>'GroupController@autocomplete'));
+});
+
+Route::group(['middleware' => ['group']], function() {
+    // Post's routes.
+    Route::resource('posts', 'PostController');
+
+    Route::get('blog/{id}', array('uses' => 'BlogController@getSingle', 'as' => 'blog.single'))->where('id', '[0-9]+');
 });
 
 // Logout.

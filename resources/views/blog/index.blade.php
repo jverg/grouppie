@@ -73,6 +73,7 @@
         {{-- Main element with the posts --}}
         <div class="col-md-6 col-md-offset-3" style="text-align: center">
             @foreach($posts as $post)
+                @if($post->group_id == \Illuminate\Support\Facades\Auth::user()->group_id)
                 <h2>{{ $post->title }}</h2>
                 <!-- Link to author's profile -->
                 <h4><span class="fa fa-user"></span>
@@ -99,6 +100,7 @@
             <!-- Read more button -->
                 <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary">Read more</a>
                 <hr style="border-color: darkslategray">
+                @endif
             @endforeach
 
             <!-- Pagination -->

@@ -19,15 +19,6 @@ use App\Http\Controllers\Controller;
 class PostController extends Controller {
 
     /**
-     * PostController constructor.
-     *
-     * In order to only authenticate user access this.
-     */
-    public function __construct() {
-        $this->middleware('auth');
-    }
-
-    /**
      * Display a listing of the post.
      *
      * @return \Illuminate\Http\Response
