@@ -20,6 +20,7 @@
                     <!-- Headers of the table -->
                     <thead>
                         <th style="text-align: center">From</th>
+                        <th style="text-align: center; padding-left: 8%;">Description</th>
                         <th style="text-align: center">Amount</th>
                     </thead>
 
@@ -29,6 +30,7 @@
                             @foreach($incomes as $income)
                                 <tr>
                                     <td style="text-align: center">{{ \App\User::find($income->borrower)->name }}</td>
+                                    <td style="text-align: center">{{ $income->description }}</td>
                                     <td style="text-align: center">{{ $income->amount }} €</td>
                                 </tr>
                             @endforeach
@@ -57,6 +59,7 @@
                     <!-- Headers of the table -->
                     <thead>
                         <th style="text-align: center; padding-left: 8%;">To</th>
+                        <th style="text-align: center; padding-left: 8%;">Description</th>
                         <th style="text-align: center">Amount</th>
                     </thead>
 
@@ -66,13 +69,15 @@
                         @foreach($expenses as $expense)
                             <tr>
                                 <td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>
+                                <td style="text-align: center">{{ $expense->description }}</td>
                                 <td style="text-align: center">{{ $expense->amount }} €</td>
                             </tr>
                         @endforeach
+                    @else
+                        <tr>
+                            <td style="text-align: center"></td>
+                        </tr>
                     @endif
-                    <tr>
-                        <td style="text-align: center"></td>
-                    </tr>
                     </tbody>
                 </table>
             </dl>
