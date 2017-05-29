@@ -15,7 +15,7 @@
                 </button>
             </div>
             <div class="mob-wallet">
-                <a href="/transactions">
+                <a href="/wallets">
                     <button type="button" class="navbar-toggle">
                         <i class="fa fa-money"></i>
                     </button>
