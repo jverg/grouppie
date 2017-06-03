@@ -5,7 +5,16 @@
 @if (Session::has('success'))
 
     <div class="alert alert-success" role="alert">
-        <strong>Success:</strong> {{ Session::get('success') }}
+        <strong>Success: </strong> {{ Session::get('success') }}
+    </div>
+
+@endif
+
+<!-- Warning message -->
+@if (Session::has('warning'))
+
+    <div class="alert alert-danger" role="alert">
+        <strong>Warning: </strong> {{ Session::get('warning') }}
     </div>
 
 @endif

@@ -29,7 +29,7 @@
                         @if($incomes)
                             @foreach($incomes as $income)
                                 <tr>
-                                    <td style="text-align: center">{{ \App\User::find($income->borrower)->name }}</td>
+                                    <td style="text-align: center"><a href="/user/{{ \App\User::find($income->borrower)->id }}">{{ \App\User::find($income->borrower)->name }}</a></td>
                                     <td style="text-align: center">{{ $income->description }}</td>
                                     <td style="text-align: center">{{ $income->amount }} €</td>
                                 </tr>
@@ -68,7 +68,7 @@
                     @if($expenses)
                         @foreach($expenses as $expense)
                             <tr>
-                                <td style="text-align: center">{{ \App\User::find($expense->lender)->name }}</td>
+                                <td style="text-align: center"><a href="/user/{{ \App\User::find($expense->lender)->id }}">{{ \App\User::find($expense->lender)->name }}</a></td>
                                 <td style="text-align: center">{{ $expense->description }}</td>
                                 <td style="text-align: center">{{ $expense->amount }} €</td>
                             </tr>

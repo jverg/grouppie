@@ -60,6 +60,10 @@ class WalletController extends Controller {
      */
     public function store(Request $request) {
 
+        // Brings the user's gid.
+        $group_id = Auth::user();
+        $group_id = $group_id['group_id'];
+
         // Validate the data.
         if($request->expense_amount || $request->lender || $request->expense_description) {
             $this->validate($request, array(
@@ -68,22 +72,34 @@ class WalletController extends Controller {
                 'expense_description' => 'required'
             ));
 
-            $lender = User::select('id')->where('name', $request->lender)->first();
-            $lender = $lender['id'];
+            // Brings the user that is got from the request.
+            $lender = User::select('id', 'group_id')->where('name', $request->lender)->first();
+            $lender_id = $lender['id'];
+            $other_user_gid = $lender['group_id'];
 
-            // Store the expense in the database
-            $expense = new Wallet;
-            $expense->amount = $request->expense_amount;
-            $expense->description = $request->expense_description;
-            $expense->lender = $lender;
-            $expense->borrower = Auth::user()->id;
-            $expense->save();
+            // Check if the user from the request is in the same group as the logged in user.
+            if($group_id == $other_user_gid) {
 
-            // Success message if the expense created successfully.
-            Session::flash('success', 'Your expense has beed saved successfully');
+                // Store the expense in the database
+                $expense = new Wallet;
+                $expense->amount = $request->expense_amount;
+                $expense->description = $request->expense_description;
+                $expense->lender = $lender_id;
+                $expense->borrower = Auth::user()->id;
+                $expense->save();
 
-            // Redirect to the page of the last created expense.
-            return redirect()->route('wallets.index', $expense->id);
+                // Success message if the expense created successfully.
+                Session::flash('success', 'Your expense has beed saved successfully');
+
+                // Redirect to the page of the last created expense.
+                return redirect()->route('wallets.index', $expense->id);
+            } else {
+                // Error message if the user is in other group.
+                Session::flash('warning', 'The user that you gave is in other group or does not exist in our records.');
+
+                // Redirect to the page of the last created expense.
+                return redirect('/wallets');
+            }
         }
         elseif ($request->income_amount || $request->borrower || $request->income_description) {
             $this->validate($request, array(
@@ -92,22 +108,34 @@ class WalletController extends Controller {
                 'income_description' => 'required'
             ));
 
-            $borrower = User::select('id')->where('name', $request->borrower)->first();
-            $borrower = $borrower['id'];
+            // Brings the user that is got from the request.
+            $borrower = User::select('id', 'group_id')->where('name', $request->borrower)->first();
+            $borrower_id = $borrower['id'];
+            $other_user_gid = $borrower['group_id'];
 
-            // Store in the database
-            $income = new Wallet;
-            $income->amount = $request->income_amount;
-            $income->description = $request->income_description;
-            $income->borrower = $borrower;
-            $income->lender = Auth::user()->id;
-            $income->save();
+            // Check if the user from the request is in the same group as the logged in user.
+            if($group_id == $other_user_gid) {
 
-            // Success message just for one request.
-            Session::flash('success', 'Your income has beed saved successfully');
+                // Store the transaction in the database
+                $income = new Wallet;
+                $income->amount = $request->income_amount;
+                $income->description = $request->income_description;
+                $income->borrower = $borrower_id;
+                $income->lender = Auth::user()->id;
+                $income->save();
 
-            // Redirect to the page of the last created expense.
-            return redirect()->route('wallets.index', $income->id);
+                // Success message just for one request.
+                Session::flash('success', 'Your income has beed saved successfully');
+
+                // Redirect to the page of the last created expense.
+                return redirect()->route('wallets.index', $income->id);
+            } else {
+                // Error message if the user is in other group.
+                Session::flash('warning', 'The user that you gave is in other group or does not exist in our records.');
+
+                // Redirect to the page of the last created expense.
+                return redirect('/wallets');
+            }
         }
     }
 

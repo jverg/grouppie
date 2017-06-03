@@ -37,8 +37,9 @@
                         @if($user->id  ==  $group->admin)
                             <td style="text-align: center">{{ $user->name }} (admin)</td>
                         @else
-                        <td style="text-align: center">{{ $user->name }}</td>
+                        <td style="text-align: center"><a href="/user/{{ $user->id }}">{{ $user->name }}</a></td>
                         @endif
+
                         @if(Auth::user()->id == $group->admin)
                             <td>
                                 {{ Form::open(array('method' => 'DELETE', 'route' => array('group.destroy', $user->id))) }}
