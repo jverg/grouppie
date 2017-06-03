@@ -193,6 +193,10 @@ html * {
     box-shadow: 0 0 8px #27F55B;
 }
 
+thead>tr>th {
+    padding-left: 0% !important;
+}
+
 .content{
     margin-top: 70px;
 }
