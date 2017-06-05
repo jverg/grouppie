@@ -29,6 +29,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('autocompletegroup',array('as'=>'autocompletegroup','uses'=>'GroupController@autocomplete'));
 });
 
+Route::group(['middleware' => ['group']], function() {
+
+    // User's routes.
+    Route::resource('user', 'UserController');
+});
+
 // Logout.
 Route::get('auth/logout', 'Auth\LoginController@logout');
 Auth::routes();

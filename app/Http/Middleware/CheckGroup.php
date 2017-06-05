@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Post;
+use App\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
@@ -21,12 +21,15 @@ class CheckGroup {
             $user_group = Auth::user()->group_id;
             $post_path = Request::getPathInfo();
             $post_path = explode("/", $post_path);
-            $post_id = $post_path[2];
 
-            $post_group = Post::where('id', $post_id)->where('group_id', $user_group)->orderBy('id', 'desc')->paginate(1);
+            if (isset($post_path[2])) {
+                $post_id = $post_path[2];
 
-            if ($post_group[0] == null) {
-                return redirect('/');
+                $post_group = User::where('id', $post_id)->where('group_id', $user_group)->orderBy('id', 'desc')->paginate(1);
+
+                if ($post_group[0] == null) {
+                    return redirect('/');
+                }
             }
         }
 
