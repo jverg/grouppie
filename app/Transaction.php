@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
-class Wallet extends Model {
+class Transaction extends Model {
 
     /**
      * @return int
@@ -16,10 +16,10 @@ class Wallet extends Model {
         $user = Auth::id();
 
         // Brings the current user's expenses.
-        $expenses = Wallet::where('borrower', $user)->get();
+        $expenses = Transaction::where('borrower', $user)->get();
 
         // Brings the current user's incomes.
-        $incomes = Wallet::where('lender', $user)->get();
+        $incomes = Transaction::where('lender', $user)->get();
 
         $outcome = 0;
         foreach ($expenses as $expense) {

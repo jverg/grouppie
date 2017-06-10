@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Wallet;
+use App\Transaction;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WalletController extends Controller {
+class TransactionController extends Controller {
 
     /**
-     * WalletController constructor.
+     * TransactionController constructor.
      *
      * In order to only authenticate user access this.
      */
@@ -30,13 +30,13 @@ class WalletController extends Controller {
         $user = Auth::id();
 
         // Brings the current user's expenses.
-        $expenses = Wallet::where('borrower', $user)->orderBy('id', 'desc')->paginate(4);
+        $expenses = Transaction::where('borrower', $user)->orderBy('id', 'desc')->paginate(4);
 
         // Brings the current user's incomes.
-        $incomes = Wallet::where('lender', $user)->orderBy('id', 'desc')->paginate(4);
+        $incomes = Transaction::where('lender', $user)->orderBy('id', 'desc')->paginate(4);
 
         // Return a view and pass in the above variables.
-        return view('wallets.index')
+        return view('transactions.index')
             ->withExpenses($expenses)
             ->withIncomes($incomes);
     }
@@ -49,7 +49,7 @@ class WalletController extends Controller {
     public function create() {
 
         // Create wallet form.
-        return view('wallets.create');
+        return view('transactions.create');
     }
 
     /**
@@ -81,7 +81,7 @@ class WalletController extends Controller {
             if($group_id == $other_user_gid) {
 
                 // Store the expense in the database
-                $expense = new Wallet;
+                $expense = new Transaction;
                 $expense->amount = $request->expense_amount;
                 $expense->description = $request->expense_description;
                 $expense->lender = $lender_id;
@@ -92,13 +92,13 @@ class WalletController extends Controller {
                 Session::flash('success', 'Your expense has beed saved successfully');
 
                 // Redirect to the page of the last created expense.
-                return redirect()->route('wallets.index', $expense->id);
+                return redirect()->route('transactions.index', $expense->id);
             } else {
                 // Error message if the user is in other group.
                 Session::flash('warning', 'The user that you gave is in other group or does not exist in our records.');
 
                 // Redirect to the page of the last created expense.
-                return redirect('/wallets');
+                return redirect('/transactions');
             }
         }
         elseif ($request->income_amount || $request->borrower || $request->income_description) {
@@ -117,7 +117,7 @@ class WalletController extends Controller {
             if($group_id == $other_user_gid) {
 
                 // Store the transaction in the database
-                $income = new Wallet;
+                $income = new Transaction;
                 $income->amount = $request->income_amount;
                 $income->description = $request->income_description;
                 $income->borrower = $borrower_id;
@@ -128,13 +128,13 @@ class WalletController extends Controller {
                 Session::flash('success', 'Your income has beed saved successfully');
 
                 // Redirect to the page of the last created expense.
-                return redirect()->route('wallets.index', $income->id);
+                return redirect()->route('transactions.index', $income->id);
             } else {
                 // Error message if the user is in other group.
                 Session::flash('warning', 'The user that you gave is in other group or does not exist in our records.');
 
                 // Redirect to the page of the last created expense.
-                return redirect('/wallets');
+                return redirect('/transactions');
             }
         }
     }
@@ -182,12 +182,12 @@ class WalletController extends Controller {
     public function destroy($id) {
 
         // Find the income to delete.
-        $expense = Wallet::find($id);
+        $expense = Transaction::find($id);
         $expense->delete();
 
         // Message when deletion took place.
         Session::flash('success', 'The transaction was successfully deleted!');
-        return redirect()->route('wallets.index');
+        return redirect()->route('transactions.index');
     }
 
     public function transactions() {
@@ -195,13 +195,13 @@ class WalletController extends Controller {
         $user = Auth::id();
 
         // Brings the current user's expenses.
-        $expenses = Wallet::where('borrower', $user)->orderBy('id', 'desc')->paginate(4);
+        $expenses = Transaction::where('borrower', $user)->orderBy('id', 'desc')->paginate(4);
 
         // Brings the current user's incomes.
-        $incomes = Wallet::where('lender', $user)->orderBy('id', 'desc')->paginate(4);
+        $incomes = Transaction::where('lender', $user)->orderBy('id', 'desc')->paginate(4);
 
         // Return a view and pass in the above variables.
-        return view('wallets.transactions')
+        return view('transactions.transactions')
             ->withExpenses($expenses)
             ->withIncomes($incomes);
     }

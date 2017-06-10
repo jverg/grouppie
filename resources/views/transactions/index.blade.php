@@ -35,7 +35,7 @@
                                     <td style="text-align: center"><a href="/user/{{ \App\User::find($income->borrower)->id }}">{{ \App\User::find($income->borrower)->name }}</a></td>
                                     <td style="text-align: center">{{ $income->amount }} €</td>
                                     <td>
-                                        {{ Form::open(array('method' => 'DELETE', 'route' => array('wallets.destroy', $income->id))) }}
+                                        {{ Form::open(array('method' => 'DELETE', 'route' => array('transactions.destroy', $income->id))) }}
                                             {{ Form::hidden('id', $income->id) }}
                                             {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
                                         {{ Form::close() }}
@@ -63,7 +63,7 @@
 
                                                 <hr>
                                                 <!-- Create new post form -->
-                                            {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+                                            {!! Form::open(array('route' => 'transactions.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
                                             <!-- Amount -->
                                             {{ Form::label('income_amount', 'Amount:') }}
@@ -118,7 +118,7 @@
                                 <td style="text-align: center"><a href="/user/{{ \App\User::find($expense->lender)->id }}">{{ \App\User::find($expense->lender)->name }}</a></td>
                                 <td style="text-align: center">{{ $expense->amount }} €</td>
                                 <td>
-                                    {{ Form::open(array('method' => 'DELETE', 'route' => array('wallets.destroy', $expense->id))) }}
+                                    {{ Form::open(array('method' => 'DELETE', 'route' => array('transactions.destroy', $expense->id))) }}
                                         {{ Form::hidden('id', $expense->id) }}
                                         {{ Form::button('<i class="fa fa-trash"></i>', array('class' => 'btn btn-danger btn-xs', 'type' => 'submit')) }}
                                     {{ Form::close() }}
@@ -145,7 +145,7 @@
                                             </div>
                                             <hr>
                                             <!-- Create new post form -->
-                                            {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+                                            {!! Form::open(array('route' => 'transactions.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
                                             <!-- Amount -->
                                             {{ Form::label('expense_amount', 'Amount:') }}

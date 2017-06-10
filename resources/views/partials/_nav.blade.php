@@ -15,7 +15,7 @@
                 </button>
             </div>
             <div class="mob-wallet">
-                <a href="/wallets">
+                <a href="/transactions">
                     <button type="button" class="navbar-toggle">
                         <i class="fa fa-money"></i>
                     </button>
@@ -70,15 +70,15 @@
 
                             {{-- My wallet --}}
                             <tr>
-                                <td style="text-align: center"><a href="/wallets"><i class="fa fa-money"></i></a></td>
+                                <td style="text-align: center"><a href="/transactions"><i class="fa fa-money"></i></a></td>
                                 <td>
-                                    @if(\App\Wallet::wholeCash() >= 0)
-                                        <a href="/wallets">
-                                            Wallet <span style="color: lawngreen">({{ \App\Wallet::wholeCash() }}€)</span>
+                                    @if(\App\Transaction::wholeCash() >= 0)
+                                        <a href="/transactions">
+                                            Wallet <span style="color: lawngreen">({{ \App\Transaction::wholeCash() }}€)</span>
                                         </a>
                                     @else
-                                        <a href="/wallets">
-                                            Wallet <span style="color: orangered">({{ \App\Wallet::wholeCash() }}€)</span>
+                                        <a href="/transactions">
+                                            Wallet <span style="color: orangered">({{ \App\Transaction::wholeCash() }}€)</span>
                                         </a>
                                     @endif
                                 </td>

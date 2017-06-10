@@ -14,10 +14,10 @@
 Route::group(['middleware' => ['web']], function () {
 
     // Wallet's routes.
-    Route::resource('wallets', 'WalletController');
+    Route::resource('transactions', 'TransactionController');
 
     // Transactions page.
-    Route::get('/', array('uses' => 'WalletController@transactions', 'as' => 'wallets.transactions'));
+    Route::get('/', array('uses' => 'TransactionController@transactions', 'as' => 'transactions.transactions'));
 
     // User's routes.
     Route::resource('user', 'UserController');
@@ -25,7 +25,7 @@ Route::group(['middleware' => ['web']], function () {
     // Group's routes.
     Route::resource('group', 'GroupController');
 
-    Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'WalletController@autocomplete'));
+    Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'TransactionController@autocomplete'));
     Route::get('autocompletegroup',array('as'=>'autocompletegroup','uses'=>'GroupController@autocomplete'));
 });
 

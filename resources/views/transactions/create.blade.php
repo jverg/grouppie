@@ -16,7 +16,7 @@
 
                 <hr>
                 <!-- Create new post form -->
-                {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+                {!! Form::open(array('route' => 'transactions.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
                 <!-- Amount -->
                 {{ Form::label('income_amount', 'Amount:') }}
@@ -45,7 +45,7 @@
                 </div>
                 <hr>
                     <!-- Create new post form -->
-                    {!! Form::open(array('route' => 'wallets.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+                    {!! Form::open(array('route' => 'transactions.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
                     <!-- Amount -->
                     {{ Form::label('expense_amount', 'Amount:') }}
