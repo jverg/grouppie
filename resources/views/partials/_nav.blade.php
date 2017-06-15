@@ -84,11 +84,14 @@
                                 </td>
                             </tr>
 
-                            {{-- My posts --}}
-                            {{--<tr>--}}
-                                {{--<td style="text-align: center"><a href="/posts"><i class="fa fa-calendar"></i></a></td>--}}
-                                {{--<td><a href="/posts">My posts ({{ Auth::user()->posts->count() }})</a></td>--}}
-                            {{--</tr>--}}
+                            <tr>
+                                <td style="text-align: center">
+                                    <a href="/charts">
+                                        <i class="fa fa-line-chart"></i>
+                                    </a>
+                                </td>
+                                <td><a href="/charts">Charts</a></td>
+                            </tr>
 
                             {{-- Logout --}}
                             <tr>

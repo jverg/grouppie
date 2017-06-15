@@ -222,4 +222,26 @@ class TransactionController extends Controller {
             ))->get();
         return response()->json($data);
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function chartViews() {
+
+        // Brings the user's id.
+        $user = Auth::id();
+
+        // Brings the current user's expenses.
+        $expenses = Transaction::where('borrower', $user)->orderBy('id', 'desc')->paginate(4);
+
+        // Brings the current user's incomes.
+        $incomes = Transaction::where('lender', $user)->orderBy('id', 'desc')->paginate(4);
+
+        // Return a view and pass in the above variables.
+        return view('transactions.charts')
+            ->withExpenses($expenses)
+            ->withIncomes($incomes);
+    }
 }

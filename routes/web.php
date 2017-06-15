@@ -16,6 +16,9 @@ Route::group(['middleware' => ['web']], function () {
     // Wallet's routes.
     Route::resource('transactions', 'TransactionController');
 
+    // Chart redirection.
+    Route::get('/charts', array('uses' => 'TransactionController@chartViews'));
+
     // Transactions page.
     Route::get('/', array('uses' => 'TransactionController@transactions', 'as' => 'transactions.transactions'));
 
