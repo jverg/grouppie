@@ -28,6 +28,7 @@
 <![endif]-->
 {{--CHART SCRIPT---->>>>>>>--}}
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+@if(\Illuminate\Support\Facades\Auth::user())
 <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -54,4 +55,5 @@
         chart.draw(data, options);
     }
 </script>
+@endif
 
