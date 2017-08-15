@@ -43,6 +43,7 @@ class UserController extends Controller {
         $user->email = $request->email;
         $user->facebook = $request->facebook->null;
         $user->twitter = $request->twitter->null;
+        $user->instagram = $request->instagram->null;
         $user->address = $request->address->null;
         $user->birthday = $request->birthday->null;
         $user->save();
@@ -113,6 +114,7 @@ class UserController extends Controller {
         $user->email = $request->input('email');
         $user->facebook = $request->input('facebook');
         $user->twitter = $request->input('twitter');
+        $user->instagram = $request->input('instagram');
         $user->address = $request->input('address');
         $user->birthday = $request->input('birthday');
         $user->save();

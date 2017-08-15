@@ -31,6 +31,12 @@
                                     {{-- User's twitter --}}
                                     <i style="color:#1DA1F2" class="fa fa-twitter fa-2x"></i>
                                     {{ Form::text('twitter', $user->twitter, array('class' => 'form-control small-col')) }}
+                                    <br>
+
+                                    {{-- User's instagram --}}
+                                    <i class="fa fa-instagram fa-2x"></i>
+                                    {{ Form::text('instagram', $user->instagram, array('class' => 'form-control small-col')) }}
+                                    <br>
 
                                 </p><br><hr>
                                 <p>

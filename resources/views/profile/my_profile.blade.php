@@ -42,6 +42,11 @@
                                 @if($user->twitter)
                                     <a style="color:#1DA1F2" class="btn" href="{{ $user->twitter }}" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
                                 @endif
+
+                                {{-- User's instagram --}}
+                                @if($user->instagram)
+                                    <a class="btn" href="{{ $user->instagram }}" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+                                @endif
                             @endif
                             </p><hr>
                             <p>
