@@ -18,36 +18,36 @@
 
                             {{-- User information --}}
                             {!! Form::model($user, array('route' => array('user.update', $user->id), 'method' => 'PATCH')) !!}
-                                {{-- User's name --}}
-                                <p>
-                                    {{ Form::text('name', $user->name, array('class' => 'form-control form-spacing-top small-col')) }}<hr>
-                                </p>
-                                <p>
-                                    {{-- User's facebook --}}
-                                    <i style="color:#3B5998" class="fa fa-facebook-official fa-2x"></i>
+                            {{-- User's name --}}
+                            <p>
+                                {{ Form::text('name', $user->name, array('class' => 'form-control form-spacing-top small-col')) }}<hr>
+                            </p>
+                            <p>
+                                {{-- User's facebook --}}
+                                <i style="color:#3B5998" class="fa fa-facebook-official fa-2x"></i>
                                     {{ Form::text('facebook', $user->facebook, array('class' => 'form-control small-col')) }}
-                                    <br>
+                                <br>
 
-                                    {{-- User's twitter --}}
-                                    <i style="color:#1DA1F2" class="fa fa-twitter fa-2x"></i>
+                                {{-- User's twitter --}}
+                                <i style="color:#1DA1F2" class="fa fa-twitter fa-2x"></i>
                                     {{ Form::text('twitter', $user->twitter, array('class' => 'form-control small-col')) }}
-                                    <br>
+                                <br>
 
-                                    {{-- User's instagram --}}
-                                    <i class="fa fa-instagram fa-2x"></i>
+                                {{-- User's instagram --}}
+                                <i class="fa fa-instagram fa-2x"></i>
                                     {{ Form::text('instagram', $user->instagram, array('class' => 'form-control small-col')) }}
-                                    <br>
+                                <br>
 
                                 </p><br><hr>
                                 <p>
                                     {{-- User's address --}}
                                     <i style="color:#ce295a" class="fa fa-map-marker fa-2x"></i>
-                                    {{ Form::text('address', $user->address, array('class' => 'form-control small-col')) }}
+                                        {{ Form::text('address', $user->address, array('class' => 'form-control small-col')) }}
                                     <br>
 
                                     {{-- User's email --}}
                                     <i style="color:#e0c633" class="fa fa-envelope fa-2x"></i>
-                                    {{ Form::text('email', $user->email, array('class' => 'form-control small-col')) }}
+                                        {{ Form::text('email', $user->email, array('class' => 'form-control small-col')) }}
                                     <br>
 
                                     {{-- User's birthday date --}}
