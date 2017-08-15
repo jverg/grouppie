@@ -84,15 +84,6 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td style="text-align: center">
-                                    <a href="/charts">
-                                        <i class="fa fa-line-chart"></i>
-                                    </a>
-                                </td>
-                                <td><a href="/charts">Charts</a></td>
-                            </tr>
-
                             {{-- Logout --}}
                             <tr>
                                 <td style="text-align: center"><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i></a></td>

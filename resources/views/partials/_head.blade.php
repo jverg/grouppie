@@ -26,34 +26,4 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-{{--CHART SCRIPT---->>>>>>>--}}
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-@if(\Illuminate\Support\Facades\Auth::user())
-<script type="text/javascript">
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-        var incomes = <?php echo json_encode($incomes); ?>;
-        for (var i in incomes['data']) {
-            var data = google.visualization.arrayToDataTable([
-                ['Transaction', 'Incomes', 'Expenses'],
-                ['1', incomes['data'][i]['amount'], 60],
-                ['2', incomes['data'][i]['amount'], 90],
-                ['3', incomes['data'][i]['amount'], 75],
-                ['4', incomes['data'][i]['amount'], 30]
-            ]);
-        }
-
-        var options = {
-            title: 'Your economy',
-            curveType: 'function',
-            legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-        chart.draw(data, options);
-    }
-</script>
-@endif
 
