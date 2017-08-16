@@ -235,7 +235,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         // Post's editor.
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
-        // Post's images
+        // User's images
         'Image' => Intervention\Image\Facades\Image::class,
         // Crawler.
         'Goutte' => Weidner\Goutte\GoutteFacade::class,

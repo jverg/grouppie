@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -117,6 +118,17 @@ class UserController extends Controller {
         $user->instagram = $request->input('instagram');
         $user->address = $request->input('address');
         $user->birthday = $request->input('birthday');
+
+        // Save profile image.
+        if ($request->hasFile('profile_image')) {
+            $image = $request->file('profile_image');
+            $filename = time() . '-' . $user->id . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/' . $filename);
+            Image::make($image)->resize(500, 500)->save($location);
+
+            $user->image = $filename;
+        }
+
         $user->save();
 
         // Success message just for one request.

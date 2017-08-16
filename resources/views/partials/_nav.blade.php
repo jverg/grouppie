@@ -56,7 +56,10 @@
                                         <i class="fa fa-user"></i>
                                     </a>
                                 </td>
-                                <td><a href="/user">My profile</a></td>
+                                <td>
+                                    <a href="/user">My profile
+                                    </a>
+                                </td>
                             </tr>
 
                             <tr>

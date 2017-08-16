@@ -17,10 +17,14 @@
                         <div class="col-sm-6 col-md-8">
 
                             {{-- User information --}}
-                            {!! Form::model($user, array('route' => array('user.update', $user->id), 'method' => 'PATCH')) !!}
+                            {!! Form::model($user, array('route' => array('user.update', $user->id), 'method' => 'PATCH', 'files' => true)) !!}
                             {{-- User's name --}}
                             <p>
-                                {{ Form::text('name', $user->name, array('class' => 'form-control form-spacing-top small-col')) }}<hr>
+                                {{ Form::text('name', $user->name, array('class' => 'form-control form-spacing-top small-col')) }}
+                                <br>
+                                {{ Form::label('profile_image', 'Upload profile image:') }}
+                                {{ Form::file('profile_image') }}
+                            <hr>
                             </p>
                             <p>
                                 {{-- User's facebook --}}
