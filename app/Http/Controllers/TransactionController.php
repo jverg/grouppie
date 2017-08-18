@@ -68,7 +68,7 @@ class TransactionController extends Controller {
         if($request->expense_amount || $request->lender || $request->expense_description) {
             $this->validate($request, array(
                 'expense_amount' => 'required|max:10',
-                'lender' => 'required',
+//                'lender' => 'required',
                 'expense_description' => 'required'
             ));
 
@@ -104,7 +104,7 @@ class TransactionController extends Controller {
         elseif ($request->income_amount || $request->borrower || $request->income_description) {
             $this->validate($request, array(
                 'income_amount' => 'required|max:10',
-                'borrower' => 'required',
+//                'borrower' => 'required',
                 'income_description' => 'required'
             ));
 
@@ -114,7 +114,7 @@ class TransactionController extends Controller {
             $other_user_gid = $borrower['group_id'];
 
             // Check if the user from the request is in the same group as the logged in user.
-            if($group_id == $other_user_gid) {
+            if($group_id == $other_user_gid || $borrower == NULL) {
 
                 // Store the transaction in the database
                 $income = new Transaction;

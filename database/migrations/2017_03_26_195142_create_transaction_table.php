@@ -17,9 +17,9 @@ class CreateTransactionTable extends Migration {
             $table->increments('id');
             $table->string('description');
             $table->integer('amount');
-            $table->integer('borrower')->unsigned();
+            $table->integer('borrower')->unsigned()->nullable();
             $table->foreign('borrower')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('lender')->unsigned();
+            $table->integer('lender')->unsigned()->nullable();
             $table->foreign('lender')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
