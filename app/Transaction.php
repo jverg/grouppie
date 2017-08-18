@@ -42,7 +42,7 @@ class Transaction extends Model {
 
         $wholeMoney = self::wholeCash();
 
-        $moneyPerDay = $wholeMoney/cal_days_in_month(CAL_GREGORIAN,date("m"),date("Y"));
+        $moneyPerDay = $wholeMoney/(cal_days_in_month(CAL_GREGORIAN,date("m"),date("Y") - date("d")));
 
         return $moneyPerDay;
     }
