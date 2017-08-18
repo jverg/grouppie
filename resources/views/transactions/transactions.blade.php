@@ -95,4 +95,6 @@
             </dl>
         </div>
     </div>
+    <p>You must use:</p>
+    <p>{{ $moneyPerDay }} €/day in order to stay alive!!</p>
 @endsection

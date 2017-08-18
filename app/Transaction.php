@@ -34,4 +34,16 @@ class Transaction extends Model {
         $cash = $salary - $outcome;
         return $cash;
     }
+
+    /**
+     * @return int
+     */
+    public static function moneyPerDay() {
+
+        $wholeMoney = self::wholeCash();
+
+        $moneyPerDay = $wholeMoney/cal_days_in_month(CAL_GREGORIAN,date("m"),date("Y"));
+
+        return $moneyPerDay;
+    }
 }

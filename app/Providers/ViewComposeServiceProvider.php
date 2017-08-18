@@ -17,6 +17,10 @@ class ViewComposeServiceProvider extends ServiceProvider
         view()->composer('partials._nav', function($view) {
             $view->with('money', Transaction::wholeCash());
         });
+
+        view()->composer('transactions.transactions', function($view) {
+            $view->with('moneyPerDay', Transaction::moneyPerDay());
+        });
     }
 
     /**
