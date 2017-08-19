@@ -76,15 +76,6 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td style="text-align: center">
-                                    <a href="/group">
-                                        <i class="fa fa-users"></i>
-                                    </a>
-                                </td>
-                                <td><a href="/group/create">My group</a></td>
-                            </tr>
-
                             {{-- My wallet --}}
                             <tr>
                                 <td style="text-align: center"><a href="/transactions"><i class="fa fa-money"></i></a></td>

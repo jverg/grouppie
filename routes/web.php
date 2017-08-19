@@ -22,11 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     // User's routes.
     Route::resource('user', 'UserController');
 
-    // Group's routes.
-    Route::resource('group', 'GroupController');
-
     Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'TransactionController@autocomplete'));
-    Route::get('autocompletegroup',array('as'=>'autocompletegroup','uses'=>'GroupController@autocomplete'));
 });
 
 Route::group(['middleware' => ['group']], function() {
