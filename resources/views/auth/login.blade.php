@@ -4,6 +4,16 @@
 
 @section('title', '| Login')
 @section('content')
+
+    {{--<h1 class="text-center">You have to stay alive!</h1>--}}
+    <div class="loader text-center">
+        <h1>
+            <span class="loader__dot">You </span>
+            <span class="loader__dot">have to stay</span>
+            <span class="loader__dot"> alive!</span>
+        </h1>
+    </div>
+    <br>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
