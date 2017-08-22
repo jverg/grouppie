@@ -84,7 +84,7 @@ class TransactionController extends Controller {
             $expense->save();
 
             // Success message if the expense created successfully.
-            Session::flash('success', 'Your expense has beed saved successfully');
+            Session::flash('success', 'Your expense has been saved successfully');
 
             // Redirect to the page of the last created expense.
             return redirect()->route('transactions.index', $expense->id);
