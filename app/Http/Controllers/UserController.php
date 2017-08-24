@@ -113,29 +113,57 @@ class UserController extends Controller {
         // Store the user in the database
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->facebook = $request->input('facebook');
-        $user->twitter = $request->input('twitter');
-        $user->instagram = $request->input('instagram');
-        $user->address = $request->input('address');
-        $user->birthday = $request->input('birthday');
+        $facebookUrl = 'https://www.facebook.com/';
+        $twitterUrl = 'https://twitter.com/';
+        $instagramUrl = 'https://www.instagram.com/';
 
-        // Save profile image.
-        if ($request->hasFile('profile_image')) {
-            $image = $request->file('profile_image');
-            $filename = time() . '-' . $user->id . '.' . $image->getClientOriginalExtension();
-            $location = public_path('images/' . $filename);
-            Image::make($image)->resize(500, 500)->save($location);
+        if ((substr( $request->input('facebook'), 0, 25 ) === $facebookUrl) == false && $request->input('facebook') != NULL) {
 
-            $user->image = $filename;
+            // Failed.
+            Session::flash('warning', 'The facebook link does not exist');
+
+            // Redirect to the page of the last created post.
+            return view('profile.edit')->withUser($user);
+        } elseif ((substr( $request->input('twitter'), 0, 20 ) === $twitterUrl) == false && $request->input('twitter') != NULL) {
+
+            // Failed.
+            Session::flash('warning', 'The twitter link does not exist');
+
+            // Redirect to the page of the last created post.
+            return view('profile.edit')->withUser($user);
+        } elseif ((substr( $request->input('instagram'), 0, 26 ) === $instagramUrl) == false && $request->input('instagram') != NULL) {
+
+            // Failed.
+            Session::flash('warning', 'The instagram link does not exist');
+
+            // Redirect to the page of the last created post.
+            return view('profile.edit')->withUser($user);
+        } else {
+
+            $user->facebook = $request->input('facebook');
+            $user->twitter = $request->input('twitter');
+            $user->instagram = $request->input('instagram');
+            $user->address = $request->input('address');
+            $user->birthday = $request->input('birthday');
+
+            // Save profile image.
+            if ($request->hasFile('profile_image')) {
+                $image = $request->file('profile_image');
+                $filename = time() . '-' . $user->id . '.' . $image->getClientOriginalExtension();
+                $location = public_path('images/' . $filename);
+                Image::make($image)->resize(500, 500)->save($location);
+
+                $user->image = $filename;
+            }
+
+            $user->save();
+
+            // Success message just for one request.
+            Session::flash('success', 'Your profile has been successfully updated!');
+
+            // Redirect to the page of the last created post.
+            return view('profile.my_profile')->withUser($user);
         }
-
-        $user->save();
-
-        // Success message just for one request.
-        Session::flash('success', 'Your profile has been successfully updated!');
-
-        // Redirect to the page of the last created post.
-        return view('profile.my_profile')->withUser($user);
     }
 
     /**
