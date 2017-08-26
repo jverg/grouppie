@@ -25,42 +25,47 @@
                             {{-- User's name --}}
                             <p>
                                 {{ Form::text('name', $user->name, array('class' => 'form-control form-spacing-top small-col')) }}
+                                {{ Form::label('name', 'The name for your grouplend profile.', array('class' => 'textfield-label')) }}
                                 <br>
-                                {{ Form::label('profile_image', 'Upload profile image:') }}
+                                <br>
                                 {{ Form::file('profile_image') }}
+                                {{ Form::label('profile_image', 'Upload profile image', array('class' => 'textfield-label')) }}
                             <hr>
                             </p>
                             <p>
                                 {{-- User's facebook --}}
                                 <i style="color:#3B5998" class="fa fa-facebook-official fa-2x"></i>
                                     {{ Form::text('facebook', $user->facebook, array('class' => 'form-control small-col')) }}
+                                    {{ Form::label('facebook', 'Copy the link from your facebook account.', array('class' => 'textfield-label')) }}
+                                <br>
                                 <br>
 
                                 {{-- User's twitter --}}
                                 <i style="color:#1DA1F2" class="fa fa-twitter fa-2x"></i>
                                     {{ Form::text('twitter', $user->twitter, array('class' => 'form-control small-col')) }}
+                                    {{ Form::label('twitter', 'Copy the link from your twitter account.', array('class' => 'textfield-label')) }}
+
+                                <br>
                                 <br>
 
                                 {{-- User's instagram --}}
                                 <i class="fa fa-instagram fa-2x"></i>
                                     {{ Form::text('instagram', $user->instagram, array('class' => 'form-control small-col')) }}
-                                <br>
+                                    {{ Form::label('instagram', 'Copy the link from your instagram account.', array('class' => 'textfield-label')) }}
 
-                                </p><br><hr>
+                            </p><br><hr>
                                 <p>
-                                    {{-- User's address --}}
-                                    <i style="color:#ce295a" class="fa fa-map-marker fa-2x"></i>
-                                        {{ Form::text('address', $user->address, array('class' => 'form-control small-col')) }}
-                                    <br>
-
                                     {{-- User's email --}}
                                     <i style="color:#e0c633" class="fa fa-envelope fa-2x"></i>
                                         {{ Form::text('email', $user->email, array('class' => 'form-control small-col')) }}
+                                        {{ Form::label('email','Your email address.', array('class' => 'textfield-label')) }}
+                                    <br>
                                     <br>
 
                                     {{-- User's birthday date --}}
                                     <i style="color:#3B5998" class="fa fa-gift fa-2x"></i>
                                     {{ Form::text('birthday', $user->birthday, array('class' => 'form-control small-col')) }}
+                                    {{ Form::label('birthday','The date of your birth.', array('class' => 'textfield-label')) }}
                                 </p>
 
                                 <!-- Submit button -->

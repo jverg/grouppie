@@ -149,6 +149,11 @@ thead>tr>th {
     clear:both;
 }
 
+.textfield-label {
+    font-size: small;
+    font-weight:normal;
+}
+
 /*Blinkable dots*/
 @keyframes blink {50% { color: transparent }}
 .loader__dot { animation: 3s blink infinite }
