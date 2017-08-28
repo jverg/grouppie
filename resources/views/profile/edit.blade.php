@@ -29,7 +29,7 @@
                                 <br>
                                 <br>
                                 {{ Form::file('profile_image') }}
-                                {{ Form::label('profile_image', 'Upload profile image', array('class' => 'textfield-label')) }}
+                                {{ Form::label('profile_image', 'Upload your profile image.', array('class' => 'textfield-label')) }}
                             <hr>
                             </p>
                             <p>

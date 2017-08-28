@@ -49,7 +49,7 @@
 
                                 {{-- User's instagram --}}
                                 @if($user->instagram)
-                                    <a class="btn" href="{{ $user->instagram }}" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+                                    <a style="color:black" class="btn" href="{{ $user->instagram }}" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
                                 @endif
                             @endif
                             </p><hr>
