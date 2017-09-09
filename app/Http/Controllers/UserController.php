@@ -144,7 +144,9 @@ class UserController extends Controller {
             $user->twitter = $request->input('twitter');
             $user->instagram = $request->input('instagram');
             $user->address = $request->input('address');
-            $user->birthday = $request->input('birthday');
+
+            $birthday = strtotime($request->input('birthday'));
+            $user->birthday = date('Y-m-d', $birthday);
 
             // Save profile image.
             if ($request->hasFile('profile_image')) {
