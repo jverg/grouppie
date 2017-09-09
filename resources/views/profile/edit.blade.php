@@ -35,14 +35,14 @@
                             <p>
                                 {{-- User's facebook --}}
                                 <i style="color:#3B5998" class="fa fa-facebook-official fa-2x"></i>
-                                    {{ Form::text('facebook', $user->facebook, array('class' => 'form-control small-col')) }}
+                                    {{ Form::text('facebook', $user->facebook, array('class' => 'form-control small-col', 'placeholder'=>'https://www.facebook.com/profilename')) }}
                                     {{ Form::label('facebook', 'Copy the link from your facebook account.', array('class' => 'textfield-label')) }}
                                 <br>
                                 <br>
 
                                 {{-- User's twitter --}}
                                 <i style="color:#1DA1F2" class="fa fa-twitter fa-2x"></i>
-                                    {{ Form::text('twitter', $user->twitter, array('class' => 'form-control small-col')) }}
+                                    {{ Form::text('twitter', $user->twitter, array('class' => 'form-control small-col', 'placeholder'=>'https://twitter.com/profilename')) }}
                                     {{ Form::label('twitter', 'Copy the link from your twitter account.', array('class' => 'textfield-label')) }}
 
                                 <br>
@@ -50,7 +50,7 @@
 
                                 {{-- User's instagram --}}
                                 <i class="fa fa-instagram fa-2x"></i>
-                                    {{ Form::text('instagram', $user->instagram, array('class' => 'form-control small-col')) }}
+                                    {{ Form::text('instagram', $user->instagram, array('class' => 'form-control small-col', 'placeholder'=>'https://www.instagram.com/profilename')) }}
                                     {{ Form::label('instagram', 'Copy the link from your instagram account.', array('class' => 'textfield-label')) }}
 
                             </p><br><hr>
@@ -64,7 +64,7 @@
 
                                     {{-- User's birthday date --}}
                                     <i style="color:#3B5998" class="fa fa-gift fa-2x"></i>
-                                    {{ Form::text('birthday', $user->birthday, array('class' => 'form-control small-col')) }}
+                                    {{ Form::text('birthday', $user->birthday, array('class' => 'form-control small-col', 'placeholder'=>'Username')) }}
                                     {{ Form::label('birthday','The date of your birth.', array('class' => 'textfield-label')) }}
                                 </p>
 
