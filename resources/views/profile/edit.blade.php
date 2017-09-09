@@ -64,7 +64,7 @@
 
                                     {{-- User's birthday date --}}
                                     <i style="color:#3B5998" class="fa fa-gift fa-2x"></i>
-                                    {{ Form::text('birthday', $user->birthday, array('class' => 'form-control small-col', 'placeholder'=>'Username')) }}
+                                    {{ Form::text('birthday',  $user->birthday, array('id' => 'datepicker', 'class' => 'form-control small-col')) }}
                                     {{ Form::label('birthday','The date of your birth.', array('class' => 'textfield-label')) }}
                                 </p>
 
