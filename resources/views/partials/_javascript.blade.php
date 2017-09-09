@@ -40,7 +40,8 @@ $( document ).ready(function() {
     $(function() {
         $( "#datepicker" ).datepicker({
             changeMonth: true,
-            changeYear: true
+            changeYear: true,
+            yearRange: "-82:-1"
         });
     });
 </script>
