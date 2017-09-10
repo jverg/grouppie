@@ -3,7 +3,7 @@
 
 @extends('main')
 
-@section('title', "| Blog" )
+@section('title', "| Edit Profile" )
 
 @section('content')
     <div class="container">

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Transaction;
+use App\Models\Transaction;
 use Illuminate\Support\ServiceProvider;
 
 class ViewComposeServiceProvider extends ServiceProvider

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,9 +50,9 @@ class UserController extends Controller {
         $user->save();
 
         // Success message just for one request.
-        Session::flash('success', 'The user was successfully save!');
+        Session::flash('success', 'The user was successfully saved!');
 
-        // Redirect to the page of the last created post.
+        // Redirect to the page of the last created user.
         return view('profile.my_profile')->withUser($user);
     }
 

@@ -16,7 +16,7 @@
             </div>
             <div class="mob-wallet">
                 <a href="/transactions">
-                    @if(\App\Transaction::wholeCash() >= 0)
+                    @if(\App\Models\Transaction::wholeCash() >= 0)
                         <a href="/transactions">
                             <span style="color: lawngreen">
                                 <button type="button" class="navbar-toggle">
@@ -80,9 +80,9 @@
                             <tr>
                                 <td style="text-align: center"><a href="/transactions"><i class="fa fa-money"></i></a></td>
                                 <td>
-                                    @if(\App\Transaction::wholeCash() >= 0)
+                                    @if(\App\Models\Transaction::wholeCash() >= 0)
                                         <a href="/transactions">
-                                            Wallet <span style="color: lawngreen">({{ \App\Transaction::wholeCash() }}€)</span>
+                                            Wallet <span style="color: lawngreen">({{ \App\Models\Transaction::wholeCash() }}€)</span>
                                         </a>
                                     @else
                                         <a href="/transactions">
